@@ -1,5 +1,6 @@
 .more-info {
     a {
+        text-decoration: none;
         h6 {
             color: $primary-color;
             text-transform: uppercase;
@@ -8,5 +9,9 @@
             margin: 0;
             padding: 10px;
         }
+        
+    }
+    &:hover {
+        @include box-shadow;
     }
 }

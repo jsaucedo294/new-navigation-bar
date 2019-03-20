@@ -674,6 +674,10 @@ body {
   border-top-right-radius: 8px;
 }
 
+.more-info a {
+  text-decoration: none;
+}
+
 .more-info a h6 {
   color: #003d4c;
   text-transform: uppercase;
@@ -681,6 +685,11 @@ body {
   font-size: 18px;
   margin: 0;
   padding: 10px;
+}
+
+.more-info:hover {
+  -webkit-box-shadow: 0 5px 30px #000000;
+          box-shadow: 0 5px 30px #000000;
 }
 
 body {
