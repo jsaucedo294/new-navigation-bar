@@ -31,4 +31,10 @@
     @content;
   }
 }
+@mixin box-shadow {
+  box-shadow: 0 5px 30px #000000;
+}
+@mixin ease-in-out {
+  transition: all .5s ease-in-out;
+}
 
