@@ -1,0 +1,30 @@
+// EVENT IMAGE & LABEL
+.eventCardLink {    
+
+    .img-holder {
+        max-height: 220px;
+        overflow: hidden;
+        position: relative;
+
+        .campus-holder {
+            background-color: #ffffff;
+            position: absolute;
+            top: 12px;
+            left: 0;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            .label-text {
+                margin: 0;
+                padding: 5px 20px;
+                line-height: 1.5;
+                font-size: 12px;
+                text-align: center;
+            }
+        }
+        .event-image {
+            width: 100%;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+    }
+}

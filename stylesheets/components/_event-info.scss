@@ -1,0 +1,24 @@
+// EVENT INFO & SVG
+.event-info {
+    margin: auto 0;
+    color: $secondary-color;
+    font-weight: 200;
+    border-bottom: solid 1px rgba($secondary-color, 0.5);
+    position: relative;
+    min-height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .info-holder {
+        h6 {
+            margin: 0;
+            font-size: 15px;
+        }
+        .event-frequency {
+            color: $primary-color;
+            font-size: 20px;
+            line-height: 1;
+        }
+    }
+}

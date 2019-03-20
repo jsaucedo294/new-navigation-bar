@@ -9,68 +9,12 @@ body {
     .event-calendar {
         background-color: green;
         .card {
-            background-color: red;
+            background-color: #fff;
             border-radius: 8px;
             width: 40%;
             @include ease-in-out;
             &:hover {
                 @include box-shadow;
-            }
-            // EVENT IMAGE & LABEL
-            .eventCardLink {    
-
-                .img-holder {
-                    max-height: 220px;
-                    overflow: hidden;
-                    position: relative;
-
-                    .campus-holder {
-                        background-color: #ffffff;
-                        position: absolute;
-                        top: 12px;
-                        left: 0;
-                        border-top-right-radius: 5px;
-                        border-bottom-right-radius: 5px;
-                        .label-text {
-                            margin: 0;
-                            padding: 5px 20px;
-                            line-height: 1.5;
-                            font-size: 12px;
-                            text-align: center;
-                        }
-                    }
-                    .event-image {
-                        width: 100%;
-                        border-top-left-radius: 8px;
-                        border-top-right-radius: 8px;
-                    }
-                }
-            }
-
-            // EVENT INFO & SVG
-            .event-info {
-                margin: 0;
-                color: $secondary-color;
-                font-weight: 200;
-                border-bottom: solid 1px $secondary-color;
-                position: relative;
-                min-height: 100px;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-                .info-holder {
-                    align-self: center;
-                    h6 {
-                        margin: 0;
-                        font-size: 15px;
-                    }
-                    .event-frequency {
-                        color: $primary-color;
-                        font-size: 20px;
-                        line-height: 1;
-                    }
-                }
             }
         }
     }

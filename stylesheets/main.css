@@ -559,6 +559,128 @@ body {
   position: absolute;
   top: -25px;
   left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0 5px 30px #000000;
+          box-shadow: 0 5px 30px #000000;
+}
+
+.event-icon .day {
+  color: #003d4c;
+  font-size: 65px;
+  font-weight: 200;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.event-icon .month {
+  margin: 0;
+  color: #003d4c;
+  padding: 0;
+}
+
+.event-info {
+  margin: auto 0;
+  color: #666666;
+  font-weight: 200;
+  border-bottom: solid 1px rgba(102, 102, 102, 0.5);
+  position: relative;
+  min-height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.event-info .info-holder h6 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.event-info .info-holder .event-frequency {
+  color: #003d4c;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.event-title-and-description-holder {
+  margin: 0;
+  padding: 15px;
+  border-bottom: solid 1px rgba(102, 102, 102, 0.5);
+}
+
+.event-title-and-description-holder h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #003d4c;
+}
+
+.event-title-and-description-holder h5 {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-weight: 200px;
+  color: #666666;
+}
+
+.eventCardLink .img-holder {
+  max-height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.eventCardLink .img-holder .campus-holder {
+  background-color: #ffffff;
+  position: absolute;
+  top: 12px;
+  left: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.eventCardLink .img-holder .campus-holder .label-text {
+  margin: 0;
+  padding: 5px 20px;
+  line-height: 1.5;
+  font-size: 12px;
+  text-align: center;
+}
+
+.eventCardLink .img-holder .event-image {
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.more-info a h6 {
+  color: #003d4c;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 18px;
+  margin: 0;
+  padding: 10px;
 }
 
 body {
@@ -572,7 +694,7 @@ body .event-calendar {
 }
 
 body .event-calendar .card {
-  background-color: red;
+  background-color: #fff;
   border-radius: 8px;
   width: 40%;
   -webkit-transition: all .5s ease-in-out;
@@ -582,54 +704,5 @@ body .event-calendar .card {
 body .event-calendar .card:hover {
   -webkit-box-shadow: 0 5px 30px #000000;
           box-shadow: 0 5px 30px #000000;
-}
-
-body .event-calendar .card .eventCardLink .img-holder {
-  max-height: 220px;
-  overflow: hidden;
-  position: relative;
-}
-
-body .event-calendar .card .eventCardLink .img-holder .campus-holder {
-  background-color: #ffffff;
-  position: absolute;
-  top: 12px;
-  left: 0;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-body .event-calendar .card .eventCardLink .img-holder .campus-holder .label-text {
-  margin: 0;
-  padding: 5px 20px;
-  line-height: 1.5;
-  font-size: 12px;
-  text-align: center;
-}
-
-body .event-calendar .card .eventCardLink .img-holder .event-image {
-  width: 100%;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-
-body .event-calendar .card .event-info {
-  margin: 0;
-  color: #666666;
-  font-weight: 200;
-  border-bottom: solid 1px #666666;
-  position: relative;
-  min-height: 100px;
-}
-
-body .event-calendar .card .event-info h6 {
-  margin: 0;
-  font-size: 15px;
-}
-
-body .event-calendar .card .event-info .event-frequency {
-  color: #003d4c;
-  font-size: 20px;
-  line-height: 1;
 }
 /*# sourceMappingURL=main.css.map */

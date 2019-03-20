@@ -24,7 +24,11 @@
 
 // 5. Components
 @import
-  'components/button';
+  'components/event-icon',
+  'components/event-info',
+  'components/event-title-and-description-holder',
+  'components/img-and-label',
+  'components/more-info';
 
 // 6. Page-specific styles
 @import
