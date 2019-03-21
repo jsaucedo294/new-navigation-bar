@@ -1,30 +1,34 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
-.event-icon {
-    background-color: #ffffff;
-    width: 110px;
-    height: 110px;
-    border-radius: 8px;
-    position: absolute;
-    top: -25px;
-    left: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    @include box-shadow;
-    .day {
-        color: $primary-color;
-        font-size: 65px;
-        font-weight: 200;
-        margin: 0;
-        padding: 0;
-        line-height: 1;
-    }
-    .month {
-        margin: 0;
-        color: $primary-color;
-        padding: 0;
+.event-icon-holder {
+    position: relative;
+    .event-icon {
+        background-color: #ffffff;
+        width: 95px;
+        height: 95px;
+        border-radius: 8px;
+        position: absolute;
+        top: -25px;
+        left: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include box-shadow;
+        .day {
+            color: $primary-color;
+            font-size: 55px;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+        }
+        .month {
+            margin: 0;
+            color: $primary-color;
+            padding: 0;
+            font-size: 14px;
+        }
     }
 }
