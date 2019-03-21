@@ -11123,8 +11123,8 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-shadow: 0 5px 30px #000000;
-          box-shadow: 0 5px 30px #000000;
+  -webkit-box-shadow: 0 1px 10px #000;
+          box-shadow: 0 1px 10px #000;
 }
 
 .event-icon-holder .event-icon .day {
@@ -11186,6 +11186,7 @@ body {
   margin: 0;
   font-size: 16px;
   color: #003d4c;
+  line-height: 1.2;
   font-weight: bold;
 }
 
@@ -11220,6 +11221,7 @@ body {
   font-size: 14px;
   text-align: center;
   font-weight: 600;
+  color: #003d4c;
 }
 
 .eventCardLink .img-holder .event-image {

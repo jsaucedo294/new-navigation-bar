@@ -1,0 +1,200 @@
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box; }
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: #003d4c;
+  text-decoration: none; }
+  a:hover, a:active, a:focus {
+    color: #222222;
+    text-decoration: underline; }
+
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: #222222; }
+
+/**
+ * Clear inner floats
+ */
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table; }
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0;
+  /* 1 */
+  text-indent: 101%;
+  white-space: nowrap; }
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+.event-icon-holder {
+  position: relative; }
+  .event-icon-holder .event-icon {
+    background-color: #ffffff;
+    width: 95px;
+    height: 95px;
+    border-radius: 8px;
+    position: absolute;
+    top: -60px;
+    left: -20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 10px #000; }
+    .event-icon-holder .event-icon .day {
+      color: #003d4c;
+      font-size: 55px;
+      font-weight: 400;
+      margin: 0;
+      padding: 0;
+      line-height: 1; }
+    .event-icon-holder .event-icon .month {
+      margin: 0;
+      color: #003d4c;
+      padding: 0;
+      font-size: 14px; }
+
+.event-info {
+  color: #666666;
+  font-weight: 200;
+  border-bottom: solid 1px rgba(102, 102, 102, 0.5);
+  min-height: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; }
+  .event-info .info-holder h6 {
+    margin: 0;
+    font-size: 16px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1; }
+  .event-info .info-holder .event-frequency {
+    color: #003d4c;
+    line-height: 1;
+    font-weight: bold; }
+
+.event-title-and-description-holder {
+  margin: 0;
+  padding: 15px;
+  border-bottom: solid 1px rgba(102, 102, 102, 0.5); }
+  .event-title-and-description-holder h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #003d4c;
+    line-height: 1.2;
+    font-weight: bold; }
+  .event-title-and-description-holder h5 {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-weight: 200px;
+    color: #666666; }
+
+.eventCardLink .img-holder {
+  max-height: 220px;
+  overflow: hidden;
+  position: relative; }
+  .eventCardLink .img-holder .campus-holder {
+    background-color: #ffffff;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px; }
+    .eventCardLink .img-holder .campus-holder .label-text {
+      margin: 0;
+      padding: 3px 20px;
+      line-height: 1.5;
+      font-size: 14px;
+      text-align: center;
+      font-weight: 600;
+      color: #003d4c; }
+  .eventCardLink .img-holder .event-image {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px; }
+
+.more-info .underscore-hover {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  margin: 10px; }
+  .more-info .underscore-hover:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #003d4c;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out; }
+  .more-info .underscore-hover:hover:before {
+    transform: scaleX(1);
+    transform: bottom right; }
+  .more-info .underscore-hover h6 {
+    color: #003d4c;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+    margin: 0; }
+
+body {
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0; }
+  body .event-calendar .event-card {
+    background-color: #fff;
+    border-radius: 8px;
+    transition: all .5s ease-in-out; }
+    body .event-calendar .event-card:hover {
+      box-shadow: 0 5px 30px #000000; }
