@@ -1,0 +1,22 @@
+@mixin phone {
+    @media screen and (max-width: 415px){
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: 416px) and (max-width: 750px) {
+        @content;
+    }
+}
+@mixin laptop {
+    @media (min-width: 751px){
+        @content;
+    }
+}
+
+
+@include phone {
+    .--info {
+        margin-left: -40px !important;
+    }
+}
