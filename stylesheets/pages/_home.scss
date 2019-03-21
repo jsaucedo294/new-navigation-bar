@@ -7,11 +7,9 @@ body {
     padding: 0;
 
     .event-calendar {
-        background-color: green;
-        .card {
+        .event-card {
             background-color: #fff;
             border-radius: 8px;
-            width: 40%;
             @include ease-in-out;
             &:hover {
                 @include box-shadow;

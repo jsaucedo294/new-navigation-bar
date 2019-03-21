@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/HugoGiraudel/sass-boilerplate/issues"
   },
-  "homepage": "https://github.com/HugoGiraudel/sass-boilerplate#readme"
+  "homepage": "https://github.com/HugoGiraudel/sass-boilerplate#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
 }

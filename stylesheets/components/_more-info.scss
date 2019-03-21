@@ -1,6 +1,8 @@
 .more-info {
+    
     a {
         text-decoration: none;
+        position: relative;
         h6 {
             color: $primary-color;
             text-transform: uppercase;
@@ -8,10 +10,25 @@
             font-size: 18px;
             margin: 0;
             padding: 10px;
+           
+            &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: $primary-color;
+                transform-origin: bottom right;
+                transition: transform 0.25s east-out;
+            }
+            &:hover:before {
+                transform: scaleX(1);
+                transform: bottom left;
+            }
         }
         
     }
-    &:hover {
-        @include box-shadow;
-    }
+    
 }
