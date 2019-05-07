@@ -19,18 +19,14 @@
   'base/typography',
   'base/helpers';
 
-// 4. Layout-related sections
+// 4. Layout-related sections`
 @import
   'layout/header',
   'layout/footer';
 
 // 5. Components
 @import
-  'components/event-icon',
-  'components/event-info',
-  'components/event-title-and-description-holder',
-  'components/img-and-label',
-  'components/more-info';
+  'components/bar-container';
 
 // 6. Page-specific styles
 @import
