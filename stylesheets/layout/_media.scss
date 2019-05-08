@@ -20,3 +20,352 @@
         margin-left: -40px !important;
     }
 }
+
+@media only screen and (min-width: 1200px) {
+    .cd-primary-nav a, .cd-primary-nav div.disabled, .cd-primary-nav ul a, .cd-primary-nav ul div.disabled {
+    line-height: 60px; } 
+}
+
+@media only screen and (max-width: 1199px) {
+    .nav-on-left .cd-primary-nav, .nav-on-left .cd-primary-nav ul {
+      right: auto;
+      left: 0; } 
+    }
+
+    @media only screen and (min-width: 1200px) {
+        .cd-primary-nav .cd-nav-icons .cd-nav-item h3 {
+          color: #000000;
+          font-size: 1.75rem;
+          margin-top: 8px; } 
+        }
+
+@media only screen and (min-width: 1200px) {
+    .cd-primary-nav .cd-nav-icons .cd-nav-item::before {
+        top: 25%;
+        margin-top: 0;
+        width: 70px;
+        height: 70px;
+        background-size: 65px 65px; } 
+    }
+@media only screen and (min-width: 1200px) {
+    .cd-primary-nav .cd-nav-icons .cd-nav-item.disabled h3 {
+        margin-top: 0; 
+    } 
+    }
+@media only screen and (min-width: 1200px) {
+    .cd-primary-nav .cd-nav-icons .cd-nav-item.coming-soon h3 {
+        margin-top: 0; 
+    } 
+    }
+
+@media only screen and (min-width: 1200px) {
+.cd-primary-nav .cd-nav-list .cd-nav-item h3 {
+    color: #000000;
+    font-size: 1.75rem;
+    margin-top: 8px; 
+} 
+}
+
+@media only screen and (min-width: 1200px) {
+    .cd-primary-nav .cd-dash-icons .cd-nav-item h3 {
+      color: #000000;
+      font-weight: bold;
+      font-size: 1.75rem;
+      margin-top: 8px; 
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .MobileGroupManager {
+      display: none; }
+    .cd-primary-nav {
+      position: static;
+      padding: 0 150px 0 0;
+      height: auto;
+      width: auto;
+      float: right;
+      overflow: visible;
+      background: transparent; }
+      .cd-primary-nav::after {
+        clear: both;
+        content: "";
+        display: table; }
+      .cd-primary-nav.moves-out > li > a {
+        /* reset mobile style */
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1; }
+      .cd-primary-nav ul {
+        position: static;
+        height: auto;
+        width: auto;
+        background: transparent;
+        overflow: visible;
+        z-index: 3; }
+        .cd-primary-nav ul a {
+          color: #000000;
+          border-bottom: 3px solid #ADADAD;
+          transition: all .3s; }
+        .cd-primary-nav ul.is-hidden {
+          /* reset mobile style */
+          -webkit-transform: translateX(0);
+          -moz-transform: translateX(0);
+          -ms-transform: translateX(0);
+          -o-transform: translateX(0);
+          transform: translateX(0); }
+        .cd-primary-nav ul.moves-out > li > a {
+          /* reset mobile style */
+          -webkit-transform: translateX(0);
+          -moz-transform: translateX(0);
+          -ms-transform: translateX(0);
+          -o-transform: translateX(0);
+          transform: translateX(0);
+          opacity: 1; }
+      .cd-primary-nav > li {
+        float: left;
+        margin-left: 1.5em; }
+      .cd-primary-nav > li > a {
+        /* main navigation buttons style */
+        position: relative;
+        display: inline-block;
+        height: 80px;
+        line-height: 80px;
+        padding: 0 10px;
+        color: #000000;
+        overflow: visible;
+        border-bottom: none;
+        -webkit-transition: color 0.3s, box-shadow 0.3s;
+        -moz-transition: color 0.3s, box-shadow 0.3s;
+        transition: color 0.3s, box-shadow 0.3s; }
+        .cd-primary-nav > li > a:hover {
+          color: #000000; }
+        .cd-primary-nav > li > a.selected {
+          color: #707070;
+          box-shadow: inset 0 -2px 0 #707070; }
+      .cd-primary-nav .go-back, .cd-primary-nav .see-all {
+        display: none; }
+      .cd-primary-nav .cd-secondary-nav,
+      .cd-primary-nav .cd-nav-gallery,
+      .cd-primary-nav .cd-nav-icons,
+      .cd-primary-nav .cd-nav-list,
+      .cd-primary-nav .cd-dash-icons {
+        /* dropdown menu style */
+        position: absolute;
+        top: 80px;
+        width: 100vw;
+        background: #FFFFFF;
+        padding: 48px 64px;
+        border-bottom: 1px solid #e0e0e0;
+        box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.16);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+        -moz-transition: opacity .3s 0s, visibility 0s 0s;
+        transition: opacity .3s 0s, visibility 0s 0s; }
+        .cd-primary-nav .cd-secondary-nav::after,
+        .cd-primary-nav .cd-nav-gallery::after,
+        .cd-primary-nav .cd-nav-icons::after,
+        .cd-primary-nav .cd-nav-list::after,
+        .cd-primary-nav .cd-dash-icons::after {
+          clear: both;
+          content: "";
+          display: table; }
+        .cd-primary-nav .cd-secondary-nav.is-hidden,
+        .cd-primary-nav .cd-nav-gallery.is-hidden,
+        .cd-primary-nav .cd-nav-icons.is-hidden,
+        .cd-primary-nav .cd-nav-list.is-hidden,
+        .cd-primary-nav .cd-dash-icons.is-hidden {
+          opacity: 0;
+          visibility: hidden;
+          -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+          -moz-transition: opacity .3s 0s, visibility 0s .3s;
+          transition: opacity .3s 0s, visibility 0s .3s; }
+        .cd-primary-nav .cd-secondary-nav > .see-all,
+        .cd-primary-nav .cd-nav-gallery > .see-all,
+        .cd-primary-nav .cd-nav-icons > .see-all,
+        .cd-primary-nav .cd-nav-list > .see-all,
+        .cd-primary-nav .cd-dash-icons > .see-all {
+          /* this is the BIG See all button at the bottom of the dropdown menu */
+          display: block;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 60px;
+          text-transform: none;
+          width: 100%;
+          overflow: hidden;
+          /* reset some inherited style */
+          margin: 0;
+          padding: 0; }
+          .cd-primary-nav .cd-secondary-nav > .see-all a,
+          .cd-primary-nav .cd-nav-gallery > .see-all a,
+          .cd-primary-nav .cd-nav-icons > .see-all a,
+          .cd-primary-nav .cd-nav-list > .see-all a,
+          .cd-primary-nav .cd-dash-icons > .see-all a {
+            color: #000000;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            line-height: 60px;
+            border-top: 1px solid rgba(0, 0, 0, 0.16);
+            /* reset some inherited style */
+            border-bottom: none;
+            margin: 0;
+            padding: 0;
+            -webkit-transition: color 0.2s, background 0.2s, border 0.2s;
+            -moz-transition: color 0.2s, background 0.2s, border 0.2s;
+            transition: color 0.2s, background 0.2s, border 0.2s; 
+    }
+
+            @media only screen and (min-width: 1200px) {
+                .cd-primary-nav .cd-secondary-nav > div.extralinks.border-right {
+                  border-right: 1px solid rgba(0, 0, 0, 0.16); }
+              .cd-primary-nav .cd-secondary-nav > li {
+                /* change the height according to your needs - you can even set height: auto */
+                height: auto;
+                /* here you set the number of columns - use width percentage */
+                width: 23%;
+                float: left;
+                margin-right: 2.66%;
+                overflow: hidden;
+                -webkit-overflow-scrolling: touch; }
+                .cd-primary-nav .cd-secondary-nav > li:nth-child(4n+2) {
+                  /* +2 because we have 2 list items with display:none */
+                  margin-right: 0;
+                  border-right: none; }
+                .cd-primary-nav .cd-secondary-nav > li > a {
+                  /* secondary nav title */
+                  color: #000000;
+                  font-weight: bold;
+                  font-size: 1.6rem;
+                  margin-bottom: .6em; }
+              .cd-primary-nav .cd-secondary-nav a {
+                color: #000000;
+                border-bottom: none;
+                font-size: 1.75rem;
+                font-weight: bold;
+                text-transform: none;
+                border-bottom: none;
+                height: auto;
+                position: relative; }
+                .cd-primary-nav .cd-secondary-nav a:hover {
+                  color: rgba(0, 0, 0, 0.5); }
+              .cd-primary-nav .cd-secondary-nav ul {
+                /* Force Hardware Acceleration in WebKit */
+                -webkit-transform: translateZ(0);
+                -moz-transform: translateZ(0);
+                -ms-transform: translateZ(0);
+                -o-transform: translateZ(0);
+                transform: translateZ(0); }
+              .cd-primary-nav .cd-secondary-nav ul {
+                /* tertiary navigation */
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: white;
+                padding-left: 3rem; }
+                .cd-primary-nav .cd-secondary-nav ul li a {
+                  line-height: 3.3rem; }
+                .cd-primary-nav .cd-secondary-nav ul.is-hidden {
+                  -webkit-transform: translateX(100%);
+                  -moz-transform: translateX(100%);
+                  -ms-transform: translateX(100%);
+                  -o-transform: translateX(100%);
+                  transform: translateX(100%); }
+                .cd-primary-nav .cd-secondary-nav ul .go-back {
+                  display: block; }
+                  .cd-primary-nav .cd-secondary-nav ul .go-back a {
+                    color: rgba(0, 0, 0, 0.5); }
+                .cd-primary-nav .cd-secondary-nav ul .see-all {
+                  display: block; }
+              .cd-primary-nav .cd-secondary-nav .moves-out {
+                /* push the navigation items to the left - and lower down opacity - when tertiary nav slides in */
+                -webkit-transform: translateX(-100%);
+                -moz-transform: translateX(-100%);
+                -ms-transform: translateX(-100%);
+                -o-transform: translateX(-100%);
+                transform: translateX(-100%); }
+              .cd-primary-nav .cd-nav-gallery li {
+                /* set here number of columns - use width percentage */
+                width: 14.285%;
+                float: left; }
+                .cd-primary-nav .cd-nav-gallery li:last-child {
+                  /* This gives some space for the "See All" button */
+                  margin-bottom: 50px; }
+              .cd-primary-nav .cd-nav-gallery .cd-nav-item {
+                border-bottom: none;
+                padding: 0;
+                height: auto;
+                line-height: 1.2;
+                text-align: center; }
+                .cd-primary-nav .cd-nav-gallery .cd-nav-item img {
+                  position: static;
+                  margin-top: 0;
+                  height: auto;
+                  border-radius: 100%;
+                  width: 70%;
+                  margin: 15px auto; }
+                .cd-primary-nav .cd-nav-gallery .cd-nav-item h3 {
+                  margin-top: 15px;
+                  font-size: 1em;
+                  color: #000000;
+                  font-weight: bold;
+                  padding: 0 .4em; }
+        
+                .cd-primary-nav .cd-nav-icons li.se-4-column {
+                  width: 25%;
+                  float: left; }
+                .cd-primary-nav .cd-nav-icons li.se-3-column {
+                  width: 33.33%;
+                  float: left; }
+                .cd-primary-nav .cd-nav-icons li.border-right {
+                  border-right: 1px solid rgba(0, 0, 0, 0.16); }
+                .cd-primary-nav .cd-nav-icons li .disabled h3 {
+                  color: #ADADAD; }
+                  .cd-primary-nav .cd-nav-icons li .disabled h3 small {
+                    clear: both;
+                    display: block;
+                    text-transform: uppercase;
+                    padding-left: 5px;
+                    line-height: 0.9rem;
+                    font-size: 1.1rem;
+                    color: #ADADAD;
+                    font-weight: 600; }
+                .cd-primary-nav .cd-nav-icons li .disabled:before {
+                  fill: #ADADAD; }
+                .cd-primary-nav .cd-nav-icons li .coming-soon h3 {
+                  color: #000000; }
+                  .cd-primary-nav .cd-nav-icons li .coming-soon h3 small {
+                    clear: both;
+                    display: block;
+                    text-transform: uppercase;
+                    padding-left: 5px;
+                    line-height: 0.9rem;
+                    font-size: 1.1rem;
+                    color: #000000;
+                    font-weight: 600; }
+                .cd-primary-nav .cd-nav-icons li .coming-soon:before {
+                  fill: #000000; }
+                .cd-primary-nav .cd-nav-icons li li {
+                  width: 48%;
+                  float: left;
+                  margin: 0 2% 20px 0; }
+              .cd-primary-nav .cd-nav-icons .cd-nav-item {
+                border-bottom: none;
+                height: auto;
+                line-height: 1.2;
+                padding: 5px 20px 5px 85px;
+                position: relative; } }

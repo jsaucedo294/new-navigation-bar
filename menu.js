@@ -1,4 +1,4 @@
-jQuery(document).ready(function($){
+$(document).ready(function($){
 	//if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well
 	var MqL = 1200;
 
@@ -24,7 +24,6 @@ jQuery(document).ready(function($){
 			});
 			$('.cd-overlay').addClass('is-visible');
 			$('.s-back-to-top').css({'right':'280px','left': 'auto'});
-      console.log("click");
 		}
 	});
 
@@ -44,7 +43,6 @@ jQuery(document).ready(function($){
 	});
 	$('.cd-overlay').on('click', function(){
 		closeNav();
-		toggleSearch('close');
 		$('.cd-overlay').removeClass('is-visible');
 		toggleTransparentMenu();
 	});
