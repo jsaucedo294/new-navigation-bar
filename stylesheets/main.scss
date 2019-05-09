@@ -1,23 +1,8 @@
 @charset 'UTF-8';
+// 1. Vendors
 @import '../node_modules/bootstrap/scss/bootstrap';
-@import '../node_modules/bourbon/core/bourbon';
-
-// 1. Configuration and helpers
-@import
-  'abstracts/variables';
-
-// 2. Vendors
-
 @import 'vendors/normalize';
 
-// 3. Base stuff
-
-// 4. Layout-related sections`
-@import
-  'layout/layout';
-
-// 5. Components
-
-// 6. Page-specific styles
+// 2. Page-specific styles
 @import
   'pages/core';
