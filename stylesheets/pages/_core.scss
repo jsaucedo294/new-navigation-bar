@@ -145,14 +145,14 @@ Main components
 	background-color: #fff;
 }
 
-	.cd-main-content-z-index {
-		z-index: $content;
-	}
+	// .cd-main-content-z-index {
+	// 	z-index: $content;
+	// }
 
 .cd-main-header {
 	height: $header-height-S;
 	background: $color-1;
-	z-index: $above-content;
+	z-index: $above-all-content;
 
 	-webkit-box-shadow: 1px -5px 20px 0px rgba($color-4 ,0.5);
 	-moz-box-shadow: 1px -5px 20px 0px rgba($color-4 ,0.5);
@@ -264,7 +264,7 @@ main {
 	white-space: nowrap;
 	/* hide text */
 	color: transparent !important;
-	z-index: $above-content;
+	z-index: $above-all-content;
 }
 
 .cd-search-trigger {
@@ -699,7 +699,7 @@ main {
 		&.nav-is-visible {
 			visibility: visible;
 			@include transition(visibility 0s 0s);
-			z-index: 2;
+			z-index: $above-content;
 		}
 	}
 }
@@ -1338,7 +1338,7 @@ main {
 .cd-overlay {
 	/* shadow layer visible when navigation is active */
 	position: fixed;
-	z-index: 2;
+	z-index: $above-content;
 	height: 100%;
 	width: 100%;
 	top: 0;

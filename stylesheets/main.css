@@ -11152,14 +11152,10 @@ Main components
   background-color: #fff;
 }
 
-.cd-main-content-z-index {
-  z-index: 2;
-}
-
 .cd-main-header {
   height: 70px;
   background: #333232;
-  z-index: 3;
+  z-index: 4;
   -webkit-box-shadow: 1px -5px 20px 0px rgba(255, 255, 255, 0.5);
   box-shadow: 1px -5px 20px 0px rgba(255, 255, 255, 0.5);
 }
@@ -11282,7 +11278,7 @@ main.transparent-content {
   white-space: nowrap;
   /* hide text */
   color: transparent !important;
-  z-index: 3;
+  z-index: 4;
 }
 
 .cd-search-trigger::before, .cd-search-trigger::after {
@@ -11754,7 +11750,7 @@ main.transparent-content {
     visibility: visible;
     -webkit-transition: visibility 0s 0s;
     transition: visibility 0s 0s;
-    z-index: 2;
+    z-index: 3;
   }
 }
 
@@ -12353,7 +12349,7 @@ main.transparent-content {
 .cd-overlay {
   /* shadow layer visible when navigation is active */
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   height: 100%;
   width: 100%;
   top: 0;
