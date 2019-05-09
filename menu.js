@@ -26,7 +26,8 @@ $(document).ready(function($){
 			$('.s-back-to-top').css({'right':'280px','left': 'auto'});
 		}
 	});
-
+	
+	
 
 	//close lateral menu on mobile
 	$('.cd-overlay').on('click', function(){
@@ -92,16 +93,16 @@ $(document).ready(function($){
 		var menu = $('.cd-main-header');
 
 		if ( $("div.cd-overlay").hasClass("is-visible") || menu.hasClass("scrolled-in") ) {
-			menu.removeClass('transparent-header');
+			menu.removeClass('gray-header');
 		} else {
 
 			if( menu.hasClass('transparent-menu-enabled') && !menu.hasClass('scrolled-in')) {
 				var menuEnabled = $('.cd-main-header.transparent-menu-enabled');
-				if( menuEnabled.hasClass('transparent-header') ) {
+				if( menuEnabled.hasClass('gray-header') ) {
 					// do nothing
 				} else {
 					// add class
-					menu.addClass('transparent-header');
+					menu.addClass('gray-header');
 				}
 			}
 
