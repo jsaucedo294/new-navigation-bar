@@ -38,23 +38,6 @@ img {
 	max-width: 100%;
 }
 
-input {
-	font-family: $primary-font;
-	font-size: 1.6rem;
-}
-
-input[type="search"]::-ms-clear {
-	/* removes close icon - IE */
-    display: none;
-}
-
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
-  display: none;
-}
-
 /* --------------------------------
 
 Main components
@@ -84,15 +67,6 @@ Main components
 						background-color: $color-1;
 					}
 				}
-			}
-		}
-
-		.cd-search-trigger {
-			&:before {
-				border-color: $color-1;
-			}
-			&:after {
-				background-color: $color-1;
 			}
 		}
 
@@ -253,7 +227,6 @@ main {
 	}
 }
 
-.cd-search-trigger,
 .cd-nav-trigger {
 	position: relative;
 	display: block;
@@ -264,97 +237,6 @@ main {
 	/* hide text */
 	color: transparent !important;
 	z-index: $above-all-content;
-}
-
-.cd-search-trigger {
-
-	&::before, &::after {
-		/* search icon */
-		content: '';
-		position: absolute;
-		@include transition(opacity .3s);
-		/* Force Hardware Acceleration in WebKit */
-		@include transform(translateZ(0));
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-	}
-
-	&::before {
-		/* lens */
-		top: 11px;
-		left: 11px;
-		width: 18px;
-		height: 18px;
-		border-radius: 50%;
-		border: 3px solid $color-4;
-	}
-
-	&::after {
-		/* handle */
-		height: 3px;
-		width: 8px;
-		background: $color-4;
-		bottom: 14px;
-		right: 11px;
-		@include transform(rotate(45deg));
-	}
-
-	span {
-		/* container for the X icon */
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		top: 0;
-		left: 0;
-	}
-
-	span::before, span::after {
-		/* close icon */
-		content: '';
-		position: absolute;
-		display: inline-block;
-		height: 3px;
-		width: 22px;
-		top: 50%;
-		margin-top: -2px;
-		left: 50%;
-		margin-left: -11px;
-		background: $color-4;
-		opacity: 0;
-		/* Force Hardware Acceleration in WebKit */
-		@include transform(translateZ(0));
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-		@include transition(opacity .3s, transform .3s);
-	}
-
-	span::before {
-		@include transform(rotate(45deg));
-	}
-
-	span::after {
-		@include transform(rotate(-45deg));
-	}
-
-	&.search-is-visible {
-		&::before, &::after {
-			/* hide search icon */
-			opacity: 0;
-		}
-
-		span::before, span::after {
-			/* show close icon */
-			opacity: 1;
-		}
-
-		span::before {
-			@include transform(rotate(135deg));
-		}
-
-		span::after {
-			@include transform(rotate(45deg));
-		}
-	}
 }
 
 .cd-nav-trigger {
@@ -527,27 +409,7 @@ main {
 			text-overflow: ellipsis;
 		}
 	}
-
-	.cd-nav-gallery .cd-nav-item {
-		padding-left: 20px;
-		text-transform: uppercase;
-
-		img {
-			position: absolute;
-			display: block;
-			height: 40px;
-			width: auto;
-			left: 20px;
-			top: 50%;
-			margin-top: -20px;
-			border-radius: 100%;
-		}
-
-		h3 {
-			font-size: 14px;
-		}
-	}
-
+	
 	.cd-nav-icons .cd-nav-item {
 		padding-left: 20px;
 
@@ -1227,64 +1089,6 @@ main {
 	}
 }
 
-.cd-search {
-	position: absolute;
-	height: $search-height-S;
-	width: 100%;
-	top: $header-height-S;
-	left: 0;
-	z-index: $above-content;
-	opacity: 0;
-	visibility: hidden;
-	-webkit-transition: opacity .3s 0s, visibility 0s .3s;
-	-moz-transition: opacity .3s 0s, visibility 0s .3s;
-	transition: opacity .3s 0s, visibility 0s .3s;
-
-	form {
-		height: 100%;
-		width: 100%;
-	}
-
-	input {
-		border-radius: 0;
-		border: none;
-		background: $color-1;
-		height: 100%;
-		width: 100%;
-		padding: 0 5%;
-		box-shadow: inset 0 1px 0 rgba($color-4, 0.16);
-
-
-		&:focus {
-			outline: none;
-		}
-	}
-
-	&.is-visible {
-		opacity: 1;
-		visibility: visible;
-		-webkit-transition: opacity .3s 0s, visibility 0s 0s;
-		-moz-transition: opacity .3s 0s, visibility 0s 0s;
-		transition: opacity .3s 0s, visibility 0s 0s;
-	}
-
-	.nav-is-fixed & {
-		position: fixed;
-	}
-
-	@include MQ(L) {
-		height: $search-height-L;
-		top: $header-height-L;
-
-		input {
-			padding: 0 2em;
-			font-size: 3rem;
-    		font-weight: bold;
-			color: $color-4;
-		}
-	}
-}
-
 .cd-overlay {
 	/* shadow layer visible when navigation is active */
 	position: fixed;
@@ -1313,9 +1117,6 @@ main {
 		.nav-on-left &.is-visible {
 			@include transform(translateX($nav-width-S));
 		}
-		&.is-visible.search-is-visible, .nav-on-left &.is-visible.search-is-visible {
-			@include transform(translateX(0));
-		}
 	}
 }
 
@@ -1332,13 +1133,6 @@ support for no js
 	overflow: visible;
 	visibility: visible;
 	z-index: $content;
-}
-
-.no-js .cd-search {
-	position: relative;
-	top: 0;
-	opacity: 1;
-	visibility: visible;
 }
 
 @include MQ(L) {
