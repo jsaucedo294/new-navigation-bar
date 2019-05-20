@@ -48,55 +48,6 @@ Main components
 	position: relative;
 	@include transition(transform .3s,background-color .3s, visibility 0s 0s);
 
-	&.transparent-header {
-		background-color: $color-1 !important;
-		box-shadow: none;
-
-		.cd-nav {
-			ul li a {
-				color: $color-1;
-				&:before,
-				&:after {
-					border-color: $color-1;
-					background: rgba($color-1, .75);
-				}
-
-				&:hover {
-					&:before,
-					&:after {
-						background-color: $color-1;
-					}
-				}
-			}
-		}
-
-		.cd-nav-login {
-			background-color: $color-3 !important;
-		}
-
-		.cd-nav-trigger {
-			&.nav-is-visible span {
-				background-color: transparent;
-			}
-			& span {
-				background-color: $color-1;
-				&:before {
-					background-color: $color-1;
-				}
-				&:after {
-					background-color: $color-1;
-				}
-			}
-		}
-
-		.cd-logo img.default-logo {
-			display: none;
-		}
-		.cd-logo img.inverse {
-			display: block;
-		}
-	}
-
 	li {
 		font-weight: 600;
 	}
@@ -128,15 +79,9 @@ Main components
 	background: $color-1;
 	z-index: $above-all-content;
 
-	-webkit-box-shadow: 1px -5px 20px 0px rgba($color-1 ,0.5);
-	-moz-box-shadow: 1px -5px 20px 0px rgba($color-1 ,0.5);
-	box-shadow: 1px -5px 20px 0px rgba($color-1 ,0.5);
-
-	&.nav-is-visible {
-		-webkit-box-shadow: none;
-	    -moz-box-shadow: none;
-	    box-shadow: none;
-	}
+	-webkit-box-shadow: 1px 1px 0px 0px rgba($color-5, 0.6);
+	-moz-box-shadow: 1px 1px 0px 0px rgba($color-5, 0.6);
+	box-shadow: 1px 1px 0px 0px rgba($color-5, 0.6);
 
 	.nav-is-fixed & {
 		/* add .nav-is-fixed class to body if you want a fixed navigation on > 1170px */
@@ -154,14 +99,8 @@ Main components
 
 main {
  	margin-top: $header-height-S;
-	 &.transparent-content {
-		 margin-top: 0 !important;
-	 }
 	 @include MQ(L) {
 	 	margin-top: $header-height-L;
-		&.transparent-content {
-	   	 margin-top: 0 !important;;
-	    }
 	 }
 }
 
@@ -227,7 +166,8 @@ main {
 	}
 }
 
-.cd-nav-trigger {
+.cd-nav-trigger,
+.cd-nav-login {
 	position: relative;
 	display: block;
 	width: 44px;
@@ -247,7 +187,7 @@ main {
 		display: inline-block;
 		height: 3px;
 		width: 24px;
-		background: $color-4;
+		background: $color-2;
 	}
 
 	span {
@@ -256,7 +196,7 @@ main {
 		top: 50%;
 		right: 10px;
 		margin-top: -2px;
-		/*@include transition(background .3s .3s);*/
+		@include transition(background .3s .3s);
 	}
 
 	span::before, span::after {
@@ -284,12 +224,12 @@ main {
 	&.nav-is-visible {
 		span {
 			/* hide line in the center */
-			background: rgba($color-4, 0);
+			background: rgba($color-2, 0);
 		}
 
 		span::before, span::after {
 			/* keep visible other 2 lines */
-			background: rgba($color-4, 1);
+			background: rgba($color-2, 1);
 		}
 
 		span::before {
@@ -306,6 +246,34 @@ main {
 	}
 }
 
+.cd-nav-login {
+
+	&::before {
+		/* profile icon */
+		content: '';
+		position: absolute;
+		@include transition(opacity .3s);
+		/* Force Hardware Acceleration in WebKit */
+		@include transform(translateZ(0));
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+
+	&::before {
+		/* SVG */
+		content:'';
+		display: block;
+		position: absolute;
+		top: 50%;
+		margin-top: -17px;
+		width: 35px;
+		height: 35px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-image: url('/img/login-icon.svg');
+	}
+}
+
 .large_screen_only {
 	display: none;
 	@include MQ(L) {
@@ -313,30 +281,57 @@ main {
 	}
 }
 
-
 .cd-primary-nav, .cd-primary-nav ul {
-	font-size: 1.5rem;
+	padding-left: 0;
+	font-size: 1em;
 	position: fixed !important;
 	top: 0;
 	right: 0;
 	height: 100%;
 	font-weight: bold;
-	text-transform: uppercase;
 	width: $nav-width-S;
 	background: $color-1;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 	z-index: $below-content;
 
-	-webkit-box-shadow: inset 1px 0px 0px 0px $color-3;
-	-moz-box-shadow: inset 1px 0px 0px 0px $color-3;
-	box-shadow: inset 1px 0px 0px 0px $color-3;
+	-webkit-box-shadow: inset 1px 0px 0px 0px $color-5;
+	-moz-box-shadow: inset 1px 0px 0px 0px $color-5;
+	box-shadow: inset 1px 0px 0px 0px $color-5;
 
 	@include MQ(L) {
-		font-size: 1.1rem;
+		font-size: 1.3em;
 		-webkit-box-shadow: none;
 		-moz-box-shadow: none;
 		box-shadow: none;
+	}
+
+	.nav-logo-and-social-container {
+		position: absolute;
+		bottom: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		@include MQ(L) {
+			display: none;
+		}
+		a {
+			margin: 0;
+			padding: 0;
+			border: none;
+			height: 100%;
+		}
+		.nav-logo {
+			max-width: 170px !important;
+		}
+		.nav-social-media {
+			display: flex;
+			justify-content: space-evenly;
+			a {
+				margin: 0;
+				padding: 0;
+				border: none;
+			}
+		}
 	}
 
 	ul {
@@ -344,9 +339,7 @@ main {
 		top: 0;
 		overflow-x: hidden;
 	}
-	/* Force Hardware Acceleration in WebKit */
-	// @include transform(translateZ(0));
-	// @include transform(translateX(0));
+	
 	@include transition(transform .3s);
 
 	a,div.disabled {
@@ -364,7 +357,7 @@ main {
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-		border-bottom: 1px solid lighten($color-3, 20%);
+		border-bottom: 1px solid $color-5;
 		@include transform(translateZ(0));
 		will-change: transform, opacity;
 		@include transition(transform .3s, opacity .3s);
@@ -415,19 +408,19 @@ main {
 
 		p {
 			color: $color-4;
-			font-size: 1.3rem;
+			font-size: 1.3em;
 			/* hide description on small devices */
 			display: none;
 		}
 
 		h3 {
-			font-size: 1.5rem;
+			font-size: 1em;
 			margin-top: 0px;
 			font-weight: 600;
 
 			@include MQ(L) {
 				color: $color-4;
-				font-size:1.75rem;
+				font-size:1.2em;
 		        margin-top: 8px;
 			}
 		}
@@ -442,12 +435,11 @@ main {
 					margin-top: 0;
 				}
 				small {
-					clear: both;
+					clear: both;	
 					display: block;
-					text-transform: uppercase;
 					// padding-left: 5px;
 					line-height: 0.7rem;
-				    font-size: 1.1rem;
+				    font-size: 1.1em;
 					color: $color-3;
 					font-weight: 600;
 				}
@@ -468,7 +460,7 @@ main {
 		}
 
 		h3 {
-			font-size: 1em;
+			font-size: 1rem;
 			margin-top: 0px;
 			font-weight: 600;
 
@@ -483,7 +475,7 @@ main {
 	.cd-dash-icons .cd-nav-item {
 
 		h3 {
-			font-size: 1em;
+			font-size: 1rem;
 			margin-top: 0px;
 			font-weight: 200;
 
@@ -524,7 +516,7 @@ main {
 
 	.cd-primary-nav {
 		position: static;
-		padding: 0 150px 0 0;
+		padding: 0 120px 0 0;
 		// padding: 0 210px 0 0;
 		height: auto;
 		width: auto;
@@ -543,17 +535,10 @@ main {
 			position: static;
 			height: auto;
 			width: auto;
-			background: $color-1;
+			background: lighten($color-1, 30%);
 			overflow: visible;
 			z-index: $above-content;
-			a {
-				color: $color-4;
-				border-bottom: 3px solid $color-3;
-				transition: all .3s;
-				&:hover {
-					background-color: lighten($color-1, 30%);
-				}
-			}
+			
 			&.is-hidden {
 				/* reset mobile style */
 				@include transform(translateX(0));
@@ -569,28 +554,31 @@ main {
 		> li {
 			float: left;
 			margin-left: 1.5em;
+			&:hover > a {
+				color: $color-2;
+			}
+			a {
+				border-bottom: 3px solid transparent;
+				transition: all .3s;
+				position: relative;
+				display: inline-block;
+				height: $header-height-L;
+				line-height: $header-height-L;
+				padding: 0 10px;
+				color: $color-4;
+				overflow: visible;
+				@include transition(color .3s, box-shadow .3s);
+
+				&.selected {
+					color: $color-2;
+					box-shadow: inset 0 -2px 0 $color-2;
+				}
+			}
 		}
 
 		> li > a {
 			/* main navigation buttons style */
-			position: relative;
-			display: inline-block;
-			height: $header-height-L;
-			line-height: $header-height-L;
-			padding: 0 10px;
-			color: $color-4;
-			overflow: visible;
-			border-bottom: none;
-			@include transition(color .3s, box-shadow .3s);
-
-			&:hover {
-				color: $color-4;
-			}
-
-			&.selected {
-				color: $color-2;
-				box-shadow: inset 0 -2px 0 $color-2;
-			}
+			
 		}
 
 		.go-back, .see-all {
@@ -609,8 +597,8 @@ main {
 			background: $color-1;
 			// padding: 48px 64px 130px;
 			padding: 48px 64px;
-			border-bottom: 1px solid lighten($color-3, 20%);
-			box-shadow: inset 0 1px 0 rgba($color-4, 0.16);
+			border-bottom: 1px solid $color-5;
+			box-shadow: inset 0 1px 0 $color-5;
 			@include transform(translateX(0));
 			@include clearfix;
 			-webkit-transition: opacity .3s 0s, visibility 0s 0s;
@@ -650,7 +638,7 @@ main {
 					font-weight: bold;
 					text-align: center;
 					line-height: 60px;
-					border-top: 1px solid rgba($color-4, 0.16);
+					border-top: 1px solid $color-5;
 					/* reset some inherited style */
 					border-bottom: none;
 					margin: 0;
@@ -680,7 +668,7 @@ main {
 				}
 
 				&.border-right {
-					border-right: 1px solid rgba($color-4, 0.16);
+					border-right: 1px solid $color-5;
 				}
 			}
 
@@ -705,7 +693,7 @@ main {
 					/* secondary nav title */
 					color: $color-4;
 					font-weight: bold;
-					font-size: 1.6rem;
+					font-size: 1em;
 					margin-bottom: .6em;
 				}
 			}
@@ -716,7 +704,7 @@ main {
 				// padding: 0 18% 0 0;
 				color: $color-4;
 				border-bottom: none;
-				font-size: 1.75rem;
+				font-size: 1.2em;
 				font-weight: bold;
 				text-transform: none;
 
@@ -724,9 +712,6 @@ main {
 			    height: auto;
 			    position: relative;
 
-				&:hover {
-					color: rgba($color-4, 0.5);
-				}
 			}
 
 			ul {
@@ -742,11 +727,11 @@ main {
 				height: 100%;
 				width: 100%;
 				background-color: $color-1;
-				padding-left: 3rem;
+				padding-left: 3em;
 
 				li {
 					a {
-						line-height: 3.3rem;
+						line-height: 3.3em;
 					}
 				}
 
@@ -805,7 +790,7 @@ main {
 
 				h3 {
 					margin-top: 15px;
-					font-size: 1em;
+					font-size: 1rem;
 					color: $color-4;
 					font-weight: bold;
 					padding: 0 .4em;
@@ -823,7 +808,7 @@ main {
 					@include column(.3333);
 				}
 				&.border-right {
-					border-right: 1px solid rgba($color-4, 0.16);
+					border-right: 1px solid $color-5;
 				}
 
 				.disabled {
@@ -832,7 +817,6 @@ main {
 						small {
 							clear: both;
 							display: block;
-							text-transform: uppercase;
 							padding-left: 5px;
 							line-height: 0.9rem;
 						    font-size: 1.1rem;
@@ -863,10 +847,10 @@ main {
 				@include MQ(L) {
 					height: 100px;
 					padding: 40px 0 40px 120px;
-				}
 
-				&:hover {
-					background: lighten($color-1, 8%);
+					&:hover > h3 {
+						color: $color-2;
+					}
 				}
 
 				h3 {
@@ -898,7 +882,7 @@ main {
 				@include column(.25);
 
 				&.border-right {
-					border-right: 1px solid rgba($color-4, 0.16);
+					border-right: 1px solid $color-5;
 				}
 			}
 
@@ -1141,7 +1125,7 @@ support for no js
 	}
 
 	.logged-in {
-		padding: 0 140px 0 0;
+		padding: 0 65px 0 0;
 	}
 	.no-js .cd-primary-nav {
 		position: absolute;

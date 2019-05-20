@@ -11025,7 +11025,7 @@ Primary style
 
 body {
   font-family: "ProximaNova", "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #fff;
+  color: #cccccc;
   background-color: #333232;
 }
 
@@ -11036,7 +11036,7 @@ body {
 }
 
 a {
-  color: #fff;
+  color: #cccccc;
   text-decoration: none;
 }
 
@@ -11061,53 +11061,6 @@ Main components
   transition: background-color 0.3s, visibility 0s 0s, -webkit-transform 0.3s;
   transition: transform 0.3s, background-color 0.3s, visibility 0s 0s;
   transition: transform 0.3s, background-color 0.3s, visibility 0s 0s, -webkit-transform 0.3s;
-}
-
-.cd-main-content.transparent-header, .cd-main-header.transparent-header {
-  background-color: #333232 !important;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.cd-main-content.transparent-header .cd-nav ul li a, .cd-main-header.transparent-header .cd-nav ul li a {
-  color: #333232;
-}
-
-.cd-main-content.transparent-header .cd-nav ul li a:before, .cd-main-content.transparent-header .cd-nav ul li a:after, .cd-main-header.transparent-header .cd-nav ul li a:before, .cd-main-header.transparent-header .cd-nav ul li a:after {
-  border-color: #333232;
-  background: rgba(51, 50, 50, 0.75);
-}
-
-.cd-main-content.transparent-header .cd-nav ul li a:hover:before, .cd-main-content.transparent-header .cd-nav ul li a:hover:after, .cd-main-header.transparent-header .cd-nav ul li a:hover:before, .cd-main-header.transparent-header .cd-nav ul li a:hover:after {
-  background-color: #333232;
-}
-
-.cd-main-content.transparent-header .cd-nav-login, .cd-main-header.transparent-header .cd-nav-login {
-  background-color: #fff !important;
-}
-
-.cd-main-content.transparent-header .cd-nav-trigger.nav-is-visible span, .cd-main-header.transparent-header .cd-nav-trigger.nav-is-visible span {
-  background-color: transparent;
-}
-
-.cd-main-content.transparent-header .cd-nav-trigger span, .cd-main-header.transparent-header .cd-nav-trigger span {
-  background-color: #333232;
-}
-
-.cd-main-content.transparent-header .cd-nav-trigger span:before, .cd-main-header.transparent-header .cd-nav-trigger span:before {
-  background-color: #333232;
-}
-
-.cd-main-content.transparent-header .cd-nav-trigger span:after, .cd-main-header.transparent-header .cd-nav-trigger span:after {
-  background-color: #333232;
-}
-
-.cd-main-content.transparent-header .cd-logo img.default-logo, .cd-main-header.transparent-header .cd-logo img.default-logo {
-  display: none;
-}
-
-.cd-main-content.transparent-header .cd-logo img.inverse, .cd-main-header.transparent-header .cd-logo img.inverse {
-  display: block;
 }
 
 .cd-main-content li, .cd-main-header li {
@@ -11135,13 +11088,8 @@ Main components
   height: 70px;
   background: #333232;
   z-index: 4;
-  -webkit-box-shadow: 1px -5px 20px 0px rgba(51, 50, 50, 0.5);
-  box-shadow: 1px -5px 20px 0px rgba(51, 50, 50, 0.5);
-}
-
-.cd-main-header.nav-is-visible {
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.6);
 }
 
 .nav-is-fixed .cd-main-header {
@@ -11167,16 +11115,9 @@ main {
   margin-top: 70px;
 }
 
-main.transparent-content {
-  margin-top: 0 !important;
-}
-
 @media only screen and (min-width: 1200px) {
   main {
     margin-top: 80px;
-  }
-  main.transparent-content {
-    margin-top: 0 !important;
   }
 }
 
@@ -11246,7 +11187,8 @@ main.transparent-content {
   }
 }
 
-.cd-nav-trigger {
+.cd-nav-trigger,
+.cd-nav-login {
   position: relative;
   display: block;
   width: 44px;
@@ -11273,7 +11215,8 @@ main.transparent-content {
   top: 50%;
   right: 10px;
   margin-top: -2px;
-  /*@include transition(background .3s .3s);*/
+  -webkit-transition: background 0.3s 0.3s;
+  transition: background 0.3s 0.3s;
 }
 
 .cd-nav-trigger span::before, .cd-nav-trigger span::after {
@@ -11330,6 +11273,33 @@ main.transparent-content {
   }
 }
 
+.cd-nav-login::before {
+  /* profile icon */
+  content: '';
+  position: absolute;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.cd-nav-login::before {
+  /* SVG */
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  width: 35px;
+  height: 35px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("/img/login-icon.svg");
+}
+
 .large_screen_only {
   display: none;
 }
@@ -11341,21 +11311,20 @@ main.transparent-content {
 }
 
 .cd-primary-nav, .cd-primary-nav ul {
-  font-size: 1.5rem;
+  padding-left: 0;
+  font-size: 1em;
   position: fixed !important;
   top: 0;
   right: 0;
   height: 100%;
   font-weight: bold;
-  text-transform: uppercase;
   width: 260px;
   background: #333232;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   z-index: 1;
-  -webkit-box-shadow: inset 1px 0px 0px 0px #fff;
-  box-shadow: inset 1px 0px 0px 0px #fff;
-  /* Force Hardware Acceleration in WebKit */
+  -webkit-box-shadow: inset 1px 0px 0px 0px #000;
+  box-shadow: inset 1px 0px 0px 0px #000;
   -webkit-transition: transform 0.3s;
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
@@ -11365,10 +11334,50 @@ main.transparent-content {
 
 @media only screen and (min-width: 1200px) {
   .cd-primary-nav, .cd-primary-nav ul {
-    font-size: 1.1rem;
+    font-size: 1.3em;
     -webkit-box-shadow: none;
     box-shadow: none;
   }
+}
+
+.cd-primary-nav .nav-logo-and-social-container, .cd-primary-nav ul .nav-logo-and-social-container {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@media only screen and (min-width: 1200px) {
+  .cd-primary-nav .nav-logo-and-social-container, .cd-primary-nav ul .nav-logo-and-social-container {
+    display: none;
+  }
+}
+
+.cd-primary-nav .nav-logo-and-social-container a, .cd-primary-nav ul .nav-logo-and-social-container a {
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 100%;
+}
+
+.cd-primary-nav .nav-logo-and-social-container .nav-logo, .cd-primary-nav ul .nav-logo-and-social-container .nav-logo {
+  max-width: 170px !important;
+}
+
+.cd-primary-nav .nav-logo-and-social-container .nav-social-media, .cd-primary-nav ul .nav-logo-and-social-container .nav-social-media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.cd-primary-nav .nav-logo-and-social-container .nav-social-media a, .cd-primary-nav ul .nav-logo-and-social-container .nav-social-media a {
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 .cd-primary-nav ul, .cd-primary-nav ul ul {
@@ -11382,14 +11391,14 @@ main.transparent-content {
   height: 50px;
   line-height: 50px;
   padding: 0 20px;
-  color: #fff;
+  color: #cccccc;
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #000;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   will-change: transform, opacity;
@@ -11455,22 +11464,22 @@ main.transparent-content {
 }
 
 .cd-primary-nav .cd-nav-icons .cd-nav-item p {
-  color: #fff;
-  font-size: 1.3rem;
+  color: #cccccc;
+  font-size: 1.3em;
   /* hide description on small devices */
   display: none;
 }
 
 .cd-primary-nav .cd-nav-icons .cd-nav-item h3 {
-  font-size: 1.5rem;
+  font-size: 1em;
   margin-top: 0px;
   font-weight: 600;
 }
 
 @media only screen and (min-width: 1200px) {
   .cd-primary-nav .cd-nav-icons .cd-nav-item h3 {
-    color: #fff;
-    font-size: 1.75rem;
+    color: #cccccc;
+    font-size: 1.2em;
     margin-top: 8px;
   }
 }
@@ -11493,9 +11502,8 @@ main.transparent-content {
 .cd-primary-nav .cd-nav-icons .cd-nav-item.disabled h3 small {
   clear: both;
   display: block;
-  text-transform: uppercase;
   line-height: 0.7rem;
-  font-size: 1.1rem;
+  font-size: 1.1em;
   color: #fff;
   font-weight: 600;
 }
@@ -11505,35 +11513,35 @@ main.transparent-content {
 }
 
 .cd-primary-nav .cd-nav-list .cd-nav-item p {
-  color: #fff;
+  color: #cccccc;
   font-size: 1.3rem;
   /* hide description on small devices */
   display: none;
 }
 
 .cd-primary-nav .cd-nav-list .cd-nav-item h3 {
-  font-size: 1em;
+  font-size: 1rem;
   margin-top: 0px;
   font-weight: 600;
 }
 
 @media only screen and (min-width: 1200px) {
   .cd-primary-nav .cd-nav-list .cd-nav-item h3 {
-    color: #fff;
+    color: #cccccc;
     font-size: 1.75rem;
     margin-top: 8px;
   }
 }
 
 .cd-primary-nav .cd-dash-icons .cd-nav-item h3 {
-  font-size: 1em;
+  font-size: 1rem;
   margin-top: 0px;
   font-weight: 200;
 }
 
 @media only screen and (min-width: 1200px) {
   .cd-primary-nav .cd-dash-icons .cd-nav-item h3 {
-    color: #fff;
+    color: #cccccc;
     font-weight: bold;
     font-size: 1.75rem;
     margin-top: 8px;
@@ -11567,7 +11575,7 @@ main.transparent-content {
   }
   .cd-primary-nav {
     position: static;
-    padding: 0 150px 0 0;
+    padding: 0 120px 0 0;
     height: auto;
     width: auto;
     float: right;
@@ -11589,18 +11597,9 @@ main.transparent-content {
     position: static;
     height: auto;
     width: auto;
-    background: #333232;
+    background: #807e7e;
     overflow: visible;
     z-index: 3;
-  }
-  .cd-primary-nav ul a {
-    color: #fff;
-    border-bottom: 3px solid #fff;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-  }
-  .cd-primary-nav ul a:hover {
-    background-color: #807e7e;
   }
   .cd-primary-nav ul.is-hidden {
     /* reset mobile style */
@@ -11617,29 +11616,33 @@ main.transparent-content {
     float: left;
     margin-left: 1.5em;
   }
-  .cd-primary-nav > li > a {
-    /* main navigation buttons style */
+  .cd-primary-nav > li:hover > a {
+    color: #fff;
+  }
+  .cd-primary-nav > li a {
+    border-bottom: 3px solid transparent;
+    -webkit-transition: all .3s;
+    transition: all .3s;
     position: relative;
     display: inline-block;
     height: 80px;
     line-height: 80px;
     padding: 0 10px;
-    color: #fff;
+    color: #cccccc;
     overflow: visible;
-    border-bottom: none;
     -webkit-transition: color 0.3s, box-shadow 0.3s;
     -webkit-transition: color 0.3s, -webkit-box-shadow 0.3s;
     transition: color 0.3s, -webkit-box-shadow 0.3s;
     transition: color 0.3s, box-shadow 0.3s;
     transition: color 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
   }
-  .cd-primary-nav > li > a:hover {
-    color: #fff;
-  }
-  .cd-primary-nav > li > a.selected {
+  .cd-primary-nav > li a.selected {
     color: #fff;
     -webkit-box-shadow: inset 0 -2px 0 #fff;
             box-shadow: inset 0 -2px 0 #fff;
+  }
+  .cd-primary-nav > li > a {
+    /* main navigation buttons style */
   }
   .cd-primary-nav .go-back, .cd-primary-nav .see-all {
     display: none;
@@ -11655,9 +11658,9 @@ main.transparent-content {
     width: 100vw;
     background: #333232;
     padding: 48px 64px;
-    border-bottom: 1px solid white;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    border-bottom: 1px solid #000;
+    -webkit-box-shadow: inset 0 1px 0 #000;
+            box-shadow: inset 0 1px 0 #000;
     -webkit-transform: translateX(0);
     transform: translateX(0);
     -webkit-transition: opacity .3s 0s, visibility 0s 0s;
@@ -11705,7 +11708,7 @@ main.transparent-content {
   .cd-primary-nav .cd-nav-icons > .see-all a,
   .cd-primary-nav .cd-nav-list > .see-all a,
   .cd-primary-nav .cd-dash-icons > .see-all a {
-    color: #fff;
+    color: #cccccc;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -11715,7 +11718,7 @@ main.transparent-content {
     font-weight: bold;
     text-align: center;
     line-height: 60px;
-    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    border-top: 1px solid #000;
     /* reset some inherited style */
     border-bottom: none;
     margin: 0;
@@ -11744,7 +11747,7 @@ main.transparent-content {
 
 @media only screen and (min-width: 1200px) {
   .cd-primary-nav .cd-secondary-nav > div.extralinks.border-right {
-    border-right: 1px solid rgba(255, 255, 255, 0.16);
+    border-right: 1px solid #000;
   }
   .cd-primary-nav .cd-secondary-nav > li {
     /* change the height according to your needs - you can even set height: auto */
@@ -11763,23 +11766,20 @@ main.transparent-content {
   }
   .cd-primary-nav .cd-secondary-nav > li > a {
     /* secondary nav title */
-    color: #fff;
+    color: #cccccc;
     font-weight: bold;
-    font-size: 1.6rem;
+    font-size: 1em;
     margin-bottom: .6em;
   }
   .cd-primary-nav .cd-secondary-nav a {
-    color: #fff;
+    color: #cccccc;
     border-bottom: none;
-    font-size: 1.75rem;
+    font-size: 1.2em;
     font-weight: bold;
     text-transform: none;
     border-bottom: none;
     height: auto;
     position: relative;
-  }
-  .cd-primary-nav .cd-secondary-nav a:hover {
-    color: rgba(255, 255, 255, 0.5);
   }
   .cd-primary-nav .cd-secondary-nav ul {
     /* Force Hardware Acceleration in WebKit */
@@ -11794,10 +11794,10 @@ main.transparent-content {
     height: 100%;
     width: 100%;
     background-color: #333232;
-    padding-left: 3rem;
+    padding-left: 3em;
   }
   .cd-primary-nav .cd-secondary-nav ul li a {
-    line-height: 3.3rem;
+    line-height: 3.3em;
   }
   .cd-primary-nav .cd-secondary-nav ul.is-hidden {
     -webkit-transform: translateX(100%);
@@ -11807,7 +11807,7 @@ main.transparent-content {
     display: block;
   }
   .cd-primary-nav .cd-secondary-nav ul .go-back a {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(204, 204, 204, 0.5);
   }
   .cd-primary-nav .cd-secondary-nav ul .see-all {
     display: block;
@@ -11843,8 +11843,8 @@ main.transparent-content {
   }
   .cd-primary-nav .cd-nav-gallery .cd-nav-item h3 {
     margin-top: 15px;
-    font-size: 1em;
-    color: #fff;
+    font-size: 1rem;
+    color: #cccccc;
     font-weight: bold;
     padding: 0 .4em;
   }
@@ -11861,7 +11861,7 @@ main.transparent-content {
     float: left;
   }
   .cd-primary-nav .cd-nav-icons li.border-right {
-    border-right: 1px solid rgba(255, 255, 255, 0.16);
+    border-right: 1px solid #000;
   }
   .cd-primary-nav .cd-nav-icons li .disabled h3 {
     color: #fff;
@@ -11869,7 +11869,6 @@ main.transparent-content {
   .cd-primary-nav .cd-nav-icons li .disabled h3 small {
     clear: both;
     display: block;
-    text-transform: uppercase;
     padding-left: 5px;
     line-height: 0.9rem;
     font-size: 1.1rem;
@@ -11898,14 +11897,14 @@ main.transparent-content {
     height: 100px;
     padding: 40px 0 40px 120px;
   }
+  .cd-primary-nav .cd-nav-icons .cd-nav-item:hover > h3 {
+    color: #fff;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
-  .cd-primary-nav .cd-nav-icons .cd-nav-item:hover {
-    background: #484646;
-  }
   .cd-primary-nav .cd-nav-icons .cd-nav-item h3 {
-    color: #fff;
+    color: #cccccc;
     font-weight: bold;
   }
   .cd-primary-nav .cd-nav-icons .cd-nav-item p {
@@ -11926,7 +11925,7 @@ main.transparent-content {
     float: left;
   }
   .cd-primary-nav .cd-nav-list li.border-right {
-    border-right: 1px solid rgba(255, 255, 255, 0.16);
+    border-right: 1px solid #000;
   }
   .cd-primary-nav .cd-nav-list .cd-nav-item {
     border-bottom: none;
@@ -11936,7 +11935,7 @@ main.transparent-content {
     position: relative;
   }
   .cd-primary-nav .cd-nav-list .cd-nav-item h3 {
-    color: #fff;
+    color: #cccccc;
     font-weight: bold;
     padding-bottom: 5px;
   }
@@ -12157,7 +12156,7 @@ support for no js
     display: none;
   }
   .logged-in {
-    padding: 0 140px 0 0;
+    padding: 0 65px 0 0;
   }
   .no-js .cd-primary-nav {
     position: absolute;

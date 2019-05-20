@@ -1,8 +1,7 @@
 @charset 'UTF-8';
-// 1. Vendors
 @import '../node_modules/bootstrap/scss/bootstrap';
-@import 'vendors/normalize';
 
+@import 'vendors/normalize';
 // 2. Page-specific styles
 @import
   'pages/core';
