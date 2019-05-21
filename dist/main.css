@@ -8,14 +8,14 @@ Primary style
 
 body {
   font-family: "ProximaNova", "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #fff;
+  color: #cccccc;
   background-color: #333232; }
   @media only screen and (max-width: 1199px) {
     body.nav-on-left.overflow-hidden {
       overflow: hidden; } }
 
 a {
-  color: #fff;
+  color: #cccccc;
   text-decoration: none; }
 
 ul li {
@@ -34,30 +34,6 @@ Main components
   position: relative;
   -webkit-transition: transform 0.3s, background-color 0.3s, visibility 0s 0s;
   transition: transform 0.3s, background-color 0.3s, visibility 0s 0s; }
-  .cd-main-content.transparent-header, .cd-main-header.transparent-header {
-    background-color: #333232 !important;
-    box-shadow: none; }
-    .cd-main-content.transparent-header .cd-nav ul li a, .cd-main-header.transparent-header .cd-nav ul li a {
-      color: #333232; }
-      .cd-main-content.transparent-header .cd-nav ul li a:before, .cd-main-content.transparent-header .cd-nav ul li a:after, .cd-main-header.transparent-header .cd-nav ul li a:before, .cd-main-header.transparent-header .cd-nav ul li a:after {
-        border-color: #333232;
-        background: rgba(51, 50, 50, 0.75); }
-      .cd-main-content.transparent-header .cd-nav ul li a:hover:before, .cd-main-content.transparent-header .cd-nav ul li a:hover:after, .cd-main-header.transparent-header .cd-nav ul li a:hover:before, .cd-main-header.transparent-header .cd-nav ul li a:hover:after {
-        background-color: #333232; }
-    .cd-main-content.transparent-header .cd-nav-login, .cd-main-header.transparent-header .cd-nav-login {
-      background-color: #fff !important; }
-    .cd-main-content.transparent-header .cd-nav-trigger.nav-is-visible span, .cd-main-header.transparent-header .cd-nav-trigger.nav-is-visible span {
-      background-color: transparent; }
-    .cd-main-content.transparent-header .cd-nav-trigger span, .cd-main-header.transparent-header .cd-nav-trigger span {
-      background-color: #333232; }
-      .cd-main-content.transparent-header .cd-nav-trigger span:before, .cd-main-header.transparent-header .cd-nav-trigger span:before {
-        background-color: #333232; }
-      .cd-main-content.transparent-header .cd-nav-trigger span:after, .cd-main-header.transparent-header .cd-nav-trigger span:after {
-        background-color: #333232; }
-    .cd-main-content.transparent-header .cd-logo img.default-logo, .cd-main-header.transparent-header .cd-logo img.default-logo {
-      display: none; }
-    .cd-main-content.transparent-header .cd-logo img.inverse, .cd-main-header.transparent-header .cd-logo img.inverse {
-      display: block; }
   .cd-main-content li, .cd-main-header li {
     font-weight: 600; }
   @media only screen and (max-width: 1199px) {
@@ -83,13 +59,9 @@ Main components
   height: 70px;
   background: #333232;
   z-index: 4;
-  -webkit-box-shadow: 1px -5px 20px 0px rgba(51, 50, 50, 0.5);
-  -moz-box-shadow: 1px -5px 20px 0px rgba(51, 50, 50, 0.5);
-  box-shadow: 1px -5px 20px 0px rgba(51, 50, 50, 0.5); }
-  .cd-main-header.nav-is-visible {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none; }
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.6); }
   .nav-is-fixed .cd-main-header {
     /* add .nav-is-fixed class to body if you want a fixed navigation on > 1170px */
     position: fixed;
@@ -106,13 +78,9 @@ Main components
 
 main {
   margin-top: 70px; }
-  main.transparent-content {
-    margin-top: 0 !important; }
   @media only screen and (min-width: 1200px) {
     main {
-      margin-top: 80px; }
-      main.transparent-content {
-        margin-top: 0 !important; } }
+      margin-top: 80px; } }
 
 .cd-logo {
   position: absolute;
@@ -181,7 +149,8 @@ main {
   top: 50%;
   right: 10px;
   margin-top: -2px;
-  /*@include transition(background .3s .3s);*/ }
+  -webkit-transition: background 0.3s 0.3s;
+  transition: background 0.3s 0.3s; }
 
 .cd-nav-trigger span::before, .cd-nav-trigger span::after {
   /* other 2 lines */
@@ -270,30 +239,54 @@ main {
 
 .cd-primary-nav, .cd-primary-nav ul {
   padding-left: 0;
-  font-size: 1.5rem;
+  font-size: 1em;
   position: fixed !important;
   top: 0;
   right: 0;
   height: 100%;
   font-weight: bold;
-  text-transform: uppercase;
   width: 260px;
   background: #333232;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   z-index: 1;
-  -webkit-box-shadow: inset 1px 0px 0px 0px #fff;
-  -moz-box-shadow: inset 1px 0px 0px 0px #fff;
-  box-shadow: inset 1px 0px 0px 0px #fff;
-  /* Force Hardware Acceleration in WebKit */
+  -webkit-box-shadow: inset 1px 0px 0px 0px #000;
+  -moz-box-shadow: inset 1px 0px 0px 0px #000;
+  box-shadow: inset 1px 0px 0px 0px #000;
   -webkit-transition: transform 0.3s;
   transition: transform 0.3s; }
   @media only screen and (min-width: 1200px) {
     .cd-primary-nav, .cd-primary-nav ul {
-      font-size: 1.1rem;
+      font-size: 1.3em;
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
       box-shadow: none; } }
+  .cd-primary-nav .nav-logo-and-social-container, .cd-primary-nav ul .nav-logo-and-social-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%); }
+    @media only screen and (min-width: 1200px) {
+      .cd-primary-nav .nav-logo-and-social-container, .cd-primary-nav ul .nav-logo-and-social-container {
+        display: none; } }
+    .cd-primary-nav .nav-logo-and-social-container a, .cd-primary-nav ul .nav-logo-and-social-container a {
+      margin: 0;
+      padding: 0;
+      border: none;
+      height: 100%; }
+    .cd-primary-nav .nav-logo-and-social-container .nav-logo, .cd-primary-nav ul .nav-logo-and-social-container .nav-logo {
+      max-width: 170px !important; }
+    .cd-primary-nav .nav-logo-and-social-container .nav-social-media, .cd-primary-nav ul .nav-logo-and-social-container .nav-social-media {
+      display: flex;
+      justify-content: space-evenly; }
+      .cd-primary-nav .nav-logo-and-social-container .nav-social-media a, .cd-primary-nav ul .nav-logo-and-social-container .nav-social-media a {
+        margin: 0;
+        padding: 0;
+        border: none; }
+        .cd-primary-nav .nav-logo-and-social-container .nav-social-media a .icon-sm, .cd-primary-nav ul .nav-logo-and-social-container .nav-social-media a .icon-sm {
+          width: 24px !important;
+          height: 24px !important;
+          font-size: 20px !important; }
   .cd-primary-nav ul, .cd-primary-nav ul ul {
     position: fixed;
     top: 0;
@@ -303,14 +296,14 @@ main {
     height: 50px;
     line-height: 50px;
     padding: 0 20px;
-    color: #fff;
+    color: #cccccc;
     text-decoration: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #000;
     -moz-transform: translateZ(0);
     -o-transform: translateZ(0);
     -ms-transform: translateZ(0);
@@ -364,19 +357,39 @@ main {
   .cd-primary-nav .cd-nav-icons .cd-nav-item {
     padding-left: 20px; }
     .cd-primary-nav .cd-nav-icons .cd-nav-item p {
-      color: #fff;
-      font-size: 1.3rem;
+      color: #cccccc;
+      font-size: 1.3em;
       /* hide description on small devices */
       display: none; }
     .cd-primary-nav .cd-nav-icons .cd-nav-item h3 {
-      font-size: 1.5rem;
+      font-size: 1em;
       margin-top: 0px;
       font-weight: 600; }
       @media only screen and (min-width: 1200px) {
         .cd-primary-nav .cd-nav-icons .cd-nav-item h3 {
-          color: #fff;
-          font-size: 1.75rem;
+          color: #cccccc;
+          font-size: 1.2em;
           margin-top: 8px; } }
+    .cd-primary-nav .cd-nav-icons .cd-nav-item::before {
+      /* item icon */
+      content: '';
+      display: block;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      margin-top: -20px;
+      width: 40px;
+      height: 40px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 35px 35px; }
+      @media only screen and (min-width: 1200px) {
+        .cd-primary-nav .cd-nav-icons .cd-nav-item::before {
+          top: 25%;
+          margin-top: 0;
+          width: 70px;
+          height: 70px;
+          background-size: 65px 65px; } }
     .cd-primary-nav .cd-nav-icons .cd-nav-item.disabled {
       line-height: 25px; }
       .cd-primary-nav .cd-nav-icons .cd-nav-item.disabled h3 {
@@ -388,34 +401,45 @@ main {
         .cd-primary-nav .cd-nav-icons .cd-nav-item.disabled h3 small {
           clear: both;
           display: block;
-          text-transform: uppercase;
           line-height: 0.7rem;
-          font-size: 1.1rem;
+          font-size: 1.1em;
           color: #fff;
           font-weight: 600; }
       .cd-primary-nav .cd-nav-icons .cd-nav-item.disabled:before {
         fill: #fff; }
+    .cd-primary-nav .cd-nav-icons .cd-nav-item.worship::before {
+      background-image: url("/Content/ExternalSite/Icons/JofD/crown.svg"); }
+    .cd-primary-nav .cd-nav-icons .cd-nav-item.discipleship::before {
+      background-image: url("/Content/ExternalSite/Icons/JofD/discipleship.svg"); }
+    .cd-primary-nav .cd-nav-icons .cd-nav-item.community::before {
+      background-image: url("/Content/ExternalSite/Icons/JofD/community.svg"); }
+    .cd-primary-nav .cd-nav-icons .cd-nav-item.multiply::before {
+      background-image: url("/Content/ExternalSite/Icons/JofD/multiply.svg"); }
+    .cd-primary-nav .cd-nav-icons .cd-nav-item.calendar::before {
+      background-image: url("/Content/ExternalSite/Icons/calendar.svg"); }
+    .cd-primary-nav .cd-nav-icons .cd-nav-item.bulletin::before {
+      background-image: url("/Content/ExternalSite/Icons/bulletin.svg"); }
   .cd-primary-nav .cd-nav-list .cd-nav-item p {
-    color: #fff;
+    color: #cccccc;
     font-size: 1.3rem;
     /* hide description on small devices */
     display: none; }
   .cd-primary-nav .cd-nav-list .cd-nav-item h3 {
-    font-size: 1em;
+    font-size: 1rem;
     margin-top: 0px;
     font-weight: 600; }
     @media only screen and (min-width: 1200px) {
       .cd-primary-nav .cd-nav-list .cd-nav-item h3 {
-        color: #fff;
+        color: #cccccc;
         font-size: 1.75rem;
         margin-top: 8px; } }
   .cd-primary-nav .cd-dash-icons .cd-nav-item h3 {
-    font-size: 1em;
+    font-size: 1rem;
     margin-top: 0px;
     font-weight: 200; }
     @media only screen and (min-width: 1200px) {
       .cd-primary-nav .cd-dash-icons .cd-nav-item h3 {
-        color: #fff;
+        color: #cccccc;
         font-weight: bold;
         font-size: 1.75rem;
         margin-top: 8px; } }
@@ -465,15 +489,9 @@ main {
       position: static;
       height: auto;
       width: auto;
-      background: #333232;
+      background: #807e7e;
       overflow: visible;
       z-index: 3; }
-      .cd-primary-nav ul a {
-        color: #fff;
-        border-bottom: 3px solid #fff;
-        transition: all .3s; }
-        .cd-primary-nav ul a:hover {
-          background-color: #807e7e; }
       .cd-primary-nav ul.is-hidden {
         /* reset mobile style */
         -moz-transform: translateX(0);
@@ -492,23 +510,25 @@ main {
     .cd-primary-nav > li {
       float: left;
       margin-left: 1.5em; }
-    .cd-primary-nav > li > a {
-      /* main navigation buttons style */
-      position: relative;
-      display: inline-block;
-      height: 80px;
-      line-height: 80px;
-      padding: 0 10px;
-      color: #fff;
-      overflow: visible;
-      border-bottom: none;
-      -webkit-transition: color 0.3s, box-shadow 0.3s;
-      transition: color 0.3s, box-shadow 0.3s; }
-      .cd-primary-nav > li > a:hover {
+      .cd-primary-nav > li:hover > a {
         color: #fff; }
-      .cd-primary-nav > li > a.selected {
-        color: #fff;
-        box-shadow: inset 0 -2px 0 #fff; }
+      .cd-primary-nav > li a {
+        border-bottom: 3px solid transparent;
+        transition: all .3s;
+        position: relative;
+        display: inline-block;
+        height: 80px;
+        line-height: 80px;
+        padding: 0 10px;
+        color: #cccccc;
+        overflow: visible;
+        -webkit-transition: color 0.3s, box-shadow 0.3s;
+        transition: color 0.3s, box-shadow 0.3s; }
+        .cd-primary-nav > li a.selected {
+          color: #fff;
+          box-shadow: inset 0 -2px 0 #fff; }
+    .cd-primary-nav > li > a {
+      /* main navigation buttons style */ }
     .cd-primary-nav .go-back, .cd-primary-nav .see-all {
       display: none; }
     .cd-primary-nav .cd-secondary-nav,
@@ -522,8 +542,8 @@ main {
       width: 100vw;
       background: #333232;
       padding: 48px 64px;
-      border-bottom: 1px solid white;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      border-bottom: 1px solid #000;
+      box-shadow: inset 0 1px 0 #000;
       -moz-transform: translateX(0);
       -o-transform: translateX(0);
       -ms-transform: translateX(0);
@@ -572,7 +592,7 @@ main {
         .cd-primary-nav .cd-nav-icons > .see-all a,
         .cd-primary-nav .cd-nav-list > .see-all a,
         .cd-primary-nav .cd-dash-icons > .see-all a {
-          color: #fff;
+          color: #cccccc;
           position: absolute;
           width: 100%;
           height: 100%;
@@ -582,7 +602,7 @@ main {
           font-weight: bold;
           text-align: center;
           line-height: 60px;
-          border-top: 1px solid rgba(255, 255, 255, 0.16);
+          border-top: 1px solid #000;
           /* reset some inherited style */
           border-bottom: none;
           margin: 0;
@@ -605,7 +625,7 @@ main {
 
 @media only screen and (min-width: 1200px) {
       .cd-primary-nav .cd-secondary-nav > div.extralinks.border-right {
-        border-right: 1px solid rgba(255, 255, 255, 0.16); }
+        border-right: 1px solid #000; }
     .cd-primary-nav .cd-secondary-nav > li {
       /* change the height according to your needs - you can even set height: auto */
       height: auto;
@@ -621,21 +641,19 @@ main {
         border-right: none; }
       .cd-primary-nav .cd-secondary-nav > li > a {
         /* secondary nav title */
-        color: #fff;
+        color: #cccccc;
         font-weight: bold;
-        font-size: 1.6rem;
+        font-size: 1em;
         margin-bottom: .6em; }
     .cd-primary-nav .cd-secondary-nav a {
-      color: #fff;
+      color: #cccccc;
       border-bottom: none;
-      font-size: 1.75rem;
+      font-size: 1.2em;
       font-weight: bold;
       text-transform: none;
       border-bottom: none;
       height: auto;
       position: relative; }
-      .cd-primary-nav .cd-secondary-nav a:hover {
-        color: rgba(255, 255, 255, 0.5); }
     .cd-primary-nav .cd-secondary-nav ul {
       /* Force Hardware Acceleration in WebKit */
       -moz-transform: translateZ(0);
@@ -651,9 +669,9 @@ main {
       height: 100%;
       width: 100%;
       background-color: #333232;
-      padding-left: 3rem; }
+      padding-left: 3em; }
       .cd-primary-nav .cd-secondary-nav ul li a {
-        line-height: 3.3rem; }
+        line-height: 3.3em; }
       .cd-primary-nav .cd-secondary-nav ul.is-hidden {
         -moz-transform: translateX(100%);
         -o-transform: translateX(100%);
@@ -663,7 +681,7 @@ main {
       .cd-primary-nav .cd-secondary-nav ul .go-back {
         display: block; }
         .cd-primary-nav .cd-secondary-nav ul .go-back a {
-          color: rgba(255, 255, 255, 0.5); }
+          color: rgba(204, 204, 204, 0.5); }
       .cd-primary-nav .cd-secondary-nav ul .see-all {
         display: block; }
     .cd-primary-nav .cd-secondary-nav .moves-out {
@@ -673,32 +691,38 @@ main {
       -ms-transform: translateX(-100%);
       -webkit-transform: translateX(-100%);
       transform: translateX(-100%); }
-    .cd-primary-nav .cd-nav-gallery li {
-      /* set here number of columns - use width percentage */
-      width: 16.666%;
-      float: left; }
-      .cd-primary-nav .cd-nav-gallery li:last-child {
-        /* This gives some space for the "See All" button */
-        margin-bottom: 50px; }
-    .cd-primary-nav .cd-nav-gallery .cd-nav-item {
-      border-bottom: none;
-      padding: 0;
-      height: auto;
-      line-height: 1.2;
-      text-align: center; }
-      .cd-primary-nav .cd-nav-gallery .cd-nav-item img {
-        position: static;
-        margin-top: 0;
-        height: auto;
-        border-radius: 100%;
-        width: 70%;
-        margin: 15px auto; }
-      .cd-primary-nav .cd-nav-gallery .cd-nav-item h3 {
-        margin-top: 15px;
-        font-size: 1em;
-        color: #fff;
-        font-weight: bold;
-        padding: 0 .4em; }
+    .cd-primary-nav .cd-nav-gallery {
+      padding: 0; }
+      .cd-primary-nav .cd-nav-gallery li {
+        /* set here number of columns - use width percentage */
+        width: 25%;
+        float: left; }
+        .cd-primary-nav .cd-nav-gallery li:last-child {
+          /* This gives some space for the "See All" button */
+          margin-bottom: 50px; }
+      .cd-primary-nav .cd-nav-gallery .cd-nav-item {
+        border-bottom: none;
+        padding: 0;
+        height: 100%;
+        line-height: 1.2;
+        text-align: center; }
+        .cd-primary-nav .cd-nav-gallery .cd-nav-item img {
+          position: static;
+          margin-top: 0;
+          height: auto;
+          width: 100%;
+          margin: 0 auto 10px;
+          opacity: 0.5;
+          -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s; }
+          .cd-primary-nav .cd-nav-gallery .cd-nav-item img:hover {
+            opacity: 1; }
+        .cd-primary-nav .cd-nav-gallery .cd-nav-item h3 {
+          margin-top: 15px;
+          font-size: 1.2rem;
+          color: #cccccc;
+          font-weight: bold;
+          padding: 0 .4em 10px; }
     .cd-primary-nav .cd-nav-icons li {
       /* set here number of columns - use width percentage */
       /* child items within */ }
@@ -709,13 +733,12 @@ main {
         width: 33.33%;
         float: left; }
       .cd-primary-nav .cd-nav-icons li.border-right {
-        border-right: 1px solid rgba(255, 255, 255, 0.16); }
+        border-right: 1px solid #000; }
       .cd-primary-nav .cd-nav-icons li .disabled h3 {
         color: #fff; }
         .cd-primary-nav .cd-nav-icons li .disabled h3 small {
           clear: both;
           display: block;
-          text-transform: uppercase;
           padding-left: 5px;
           line-height: 0.9rem;
           font-size: 1.1rem;
@@ -736,13 +759,13 @@ main {
     @media only screen and (min-width: 1200px) and (min-width: 1200px) {
       .cd-primary-nav .cd-nav-icons .cd-nav-item {
         height: 100px;
-        padding: 40px 0 40px 120px; } }
+        padding: 40px 0 40px 120px; }
+        .cd-primary-nav .cd-nav-icons .cd-nav-item:hover > h3 {
+          color: #fff; } }
 
 @media only screen and (min-width: 1200px) {
-      .cd-primary-nav .cd-nav-icons .cd-nav-item:hover {
-        background: #484646; }
       .cd-primary-nav .cd-nav-icons .cd-nav-item h3 {
-        color: #fff;
+        color: #cccccc;
         font-weight: bold; }
       .cd-primary-nav .cd-nav-icons .cd-nav-item p {
         display: block;
@@ -758,7 +781,7 @@ main {
       width: 25%;
       float: left; }
       .cd-primary-nav .cd-nav-list li.border-right {
-        border-right: 1px solid rgba(255, 255, 255, 0.16); }
+        border-right: 1px solid #000; }
     .cd-primary-nav .cd-nav-list .cd-nav-item {
       border-bottom: none;
       height: auto;
@@ -766,7 +789,7 @@ main {
       padding: 0px 20px 5px 30px;
       position: relative; }
       .cd-primary-nav .cd-nav-list .cd-nav-item h3 {
-        color: #fff;
+        color: #cccccc;
         font-weight: bold;
         padding-bottom: 5px; }
       .cd-primary-nav .cd-nav-list .cd-nav-item p {

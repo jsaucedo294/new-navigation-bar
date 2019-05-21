@@ -330,6 +330,11 @@ main {
 				margin: 0;
 				padding: 0;
 				border: none;
+				.icon-sm {
+					width: 24px !important;
+					height: 24px !important;
+					font-size: 20px !important;
+				}
 			}
 		}
 	}
@@ -425,6 +430,28 @@ main {
 			}
 		}
 
+		&::before {
+			/* item icon */
+			content:'';
+			display: block;
+			position: absolute;
+			left: 20px;
+			top: 50%;
+			margin-top: -20px;
+			width: 40px;
+			height: 40px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 35px 35px;
+
+			@include MQ(L) {
+				top: 25%;
+				margin-top: 0;
+				width: 70px;
+				height: 70px;
+				background-size: 65px 65px;
+			}
+		}
 
 		&.disabled {
 			line-height: 25px;
@@ -447,6 +474,24 @@ main {
 			&:before  {
 				fill: $color-3;
 			}
+		}
+		&.worship::before {
+			background-image: url('/Content/ExternalSite/Icons/JofD/crown.svg');
+		}
+		&.discipleship::before {
+			background-image: url('/Content/ExternalSite/Icons/JofD/discipleship.svg');
+		}
+		&.community::before {
+			background-image: url('/Content/ExternalSite/Icons/JofD/community.svg');
+		}
+		&.multiply::before {
+			background-image: url('/Content/ExternalSite/Icons/JofD/multiply.svg');
+		}
+		&.calendar::before {
+			background-image: url('/Content/ExternalSite/Icons/calendar.svg');
+		}
+		&.bulletin::before {
+			background-image: url('/Content/ExternalSite/Icons/bulletin.svg');
 		}
 	}
 
@@ -760,12 +805,12 @@ main {
 		}
 
 		.cd-nav-gallery {
+			padding:0;
 			li {
 				/* set here number of columns - use width percentage */
 				// @include column(.22);
 				// margin: 0 4% 40px 0;
-				@include column(.16666);
-
+				@include column(.25);
 				&:last-child {
 					/* This gives some space for the "See All" button */
 					margin-bottom: 50px;
@@ -775,7 +820,7 @@ main {
 			.cd-nav-item {
 				border-bottom: none;
 				padding: 0;
-				height: auto;
+				height: 100%;
 				line-height: 1.2;
 				text-align: center;
 
@@ -783,17 +828,21 @@ main {
 					position: static;
 					margin-top: 0;
 					height: auto;
-					border-radius: 100%;
-					width: 70%;
-					margin: 15px auto;
+					width: 100%;
+					margin: 0 auto 10px;
+					opacity: 0.5;
+					@include transition(opacity .3s);
+					&:hover {
+						opacity: 1;
+					}
 				}
 
 				h3 {
 					margin-top: 15px;
-					font-size: 1rem;
+					font-size: 1.2rem;
 					color: $color-4;
 					font-weight: bold;
-					padding: 0 .4em;
+					padding: 0 .4em 10px;
 				}
 			}
 		}

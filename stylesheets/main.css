@@ -11380,6 +11380,12 @@ main {
   border: none;
 }
 
+.cd-primary-nav .nav-logo-and-social-container .nav-social-media a .icon-sm, .cd-primary-nav ul .nav-logo-and-social-container .nav-social-media a .icon-sm {
+  width: 24px !important;
+  height: 24px !important;
+  font-size: 20px !important;
+}
+
 .cd-primary-nav ul, .cd-primary-nav ul ul {
   position: fixed;
   top: 0;
@@ -11817,9 +11823,12 @@ main {
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
   }
+  .cd-primary-nav .cd-nav-gallery {
+    padding: 0;
+  }
   .cd-primary-nav .cd-nav-gallery li {
     /* set here number of columns - use width percentage */
-    width: 16.666%;
+    width: 25%;
     float: left;
   }
   .cd-primary-nav .cd-nav-gallery li:last-child {
@@ -11829,7 +11838,7 @@ main {
   .cd-primary-nav .cd-nav-gallery .cd-nav-item {
     border-bottom: none;
     padding: 0;
-    height: auto;
+    height: 100%;
     line-height: 1.2;
     text-align: center;
   }
@@ -11837,16 +11846,21 @@ main {
     position: static;
     margin-top: 0;
     height: auto;
-    border-radius: 100%;
-    width: 70%;
-    margin: 15px auto;
+    width: 100%;
+    margin: 0 auto 10px;
+    opacity: 0.5;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .cd-primary-nav .cd-nav-gallery .cd-nav-item img:hover {
+    opacity: 1;
   }
   .cd-primary-nav .cd-nav-gallery .cd-nav-item h3 {
     margin-top: 15px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #cccccc;
     font-weight: bold;
-    padding: 0 .4em;
+    padding: 0 .4em 10px;
   }
   .cd-primary-nav .cd-nav-icons li {
     /* set here number of columns - use width percentage */
