@@ -354,6 +354,11 @@ main {
       line-height: inherit;
       overflow: hidden;
       text-overflow: ellipsis; }
+  .cd-primary-nav .cd-nav-icons .nav-current-series {
+    display: none; }
+    @media only screen and (min-width: 1200px) {
+      .cd-primary-nav .cd-nav-icons .nav-current-series {
+        display: block; } }
   .cd-primary-nav .cd-nav-icons .cd-nav-item {
     padding-left: 20px; }
     .cd-primary-nav .cd-nav-icons .cd-nav-item p {
@@ -705,13 +710,16 @@ main {
         padding: 0;
         height: 100%;
         line-height: 1.2;
-        text-align: center; }
+        text-align: center;
+        position: relative; }
         .cd-primary-nav .cd-nav-gallery .cd-nav-item img {
           position: static;
           margin-top: 0;
           height: auto;
-          width: 100%;
-          margin: 0 auto 10px;
+          height: 400px;
+          object-fit: cover;
+          margin: 0 auto;
+          padding: 0 0 10px;
           opacity: 0.5;
           -webkit-transition: opacity 0.3s;
           transition: opacity 0.3s; }
@@ -726,6 +734,9 @@ main {
     .cd-primary-nav .cd-nav-icons li {
       /* set here number of columns - use width percentage */
       /* child items within */ }
+      .cd-primary-nav .cd-nav-icons li.se-6-column {
+        width: 43%;
+        float: left; }
       .cd-primary-nav .cd-nav-icons li.se-4-column {
         width: 25%;
         float: left; }

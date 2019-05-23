@@ -407,7 +407,12 @@ main {
 			text-overflow: ellipsis;
 		}
 	}
-	
+	.cd-nav-icons .nav-current-series {
+		display: none;
+		@include MQ(L){
+			display: block;
+		}
+	}
 	.cd-nav-icons .cd-nav-item {
 		padding-left: 20px;
 
@@ -805,6 +810,7 @@ main {
 		}
 
 		.cd-nav-gallery {
+
 			padding:0;
 			li {
 				/* set here number of columns - use width percentage */
@@ -823,13 +829,16 @@ main {
 				height: 100%;
 				line-height: 1.2;
 				text-align: center;
+				position: relative;
 
 				img {
 					position: static;
 					margin-top: 0;
 					height: auto;
-					width: 100%;
-					margin: 0 auto 10px;
+					height: 400px;
+					object-fit: cover;
+					margin: 0 auto;
+					padding: 0 0 10px;
 					opacity: 0.5;
 					@include transition(opacity .3s);
 					&:hover {
@@ -850,6 +859,9 @@ main {
 		.cd-nav-icons {
 			li {
 				/* set here number of columns - use width percentage */
+				&.se-6-column {
+					@include column(.43);
+				}
 				&.se-4-column {
 					@include column(.25);
 				}
