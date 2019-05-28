@@ -41,8 +41,7 @@ Main components
 
 .cd-main-content {
   min-height: 100vh;
-  z-index: 2;
-  background-color: #fff; }
+  z-index: 2; }
 
 .cd-main-header {
   height: 70px;
@@ -97,7 +96,7 @@ main {
   position: absolute;
   display: inline-block;
   top: 12px;
-  right: 5%; }
+  right: 20px; }
   .cd-header-buttons li {
     display: inline-flex; }
   @media only screen and (max-width: 1199px) {
@@ -218,7 +217,7 @@ main {
   height: 35px;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url("/img/login-icon.svg"); }
+  background-image: url("/Content/ExternalSite/Icons/login-icon.svg"); }
 
 .large_screen_only {
   display: none; }
@@ -248,7 +247,7 @@ main {
     list-style: none; }
   @media only screen and (min-width: 1200px) {
     .cd-primary-nav, .cd-primary-nav ul {
-      font-size: 1.3em;
+      font-size: 1.2em;
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
       box-shadow: none; } }
@@ -350,86 +349,93 @@ main {
     @media only screen and (min-width: 1200px) {
       .cd-primary-nav .cd-nav-sermons .nav-current-series {
         display: block; } }
-  .cd-primary-nav .cd-nav-icons .cd-nav-item {
-    padding-left: 20px; }
-    .cd-primary-nav .cd-nav-icons .cd-nav-item h3 {
-      font-size: 1em;
-      margin-top: 0px;
-      font-weight: 600; }
+  .cd-primary-nav .cd-nav-icons .cd-nav-item h3 {
+    font-size: 1em;
+    margin-top: 0px;
+    font-weight: 600;
+    padding-left: 50px; }
+    @media only screen and (min-width: 1200px) {
+      .cd-primary-nav .cd-nav-icons .cd-nav-item h3 {
+        color: #cccccc;
+        font-size: 1.5em;
+        margin-top: 8px;
+        padding-left: 0 !important; } }
+  .cd-primary-nav .cd-nav-icons .cd-nav-item::before {
+    /* item icon */
+    content: '';
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    margin-top: -20px;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 35px 35px; }
+    @media only screen and (min-width: 1200px) {
+      .cd-primary-nav .cd-nav-icons .cd-nav-item::before {
+        top: 25%;
+        margin-top: 0;
+        width: 70px;
+        height: 70px;
+        background-size: 65px 65px; } }
+  .cd-primary-nav .cd-nav-icons .cd-nav-item.disabled {
+    line-height: 25px; }
+    .cd-primary-nav .cd-nav-icons .cd-nav-item.disabled h3 {
+      color: #cccccc;
+      margin-top: 5px; }
       @media only screen and (min-width: 1200px) {
-        .cd-primary-nav .cd-nav-icons .cd-nav-item h3 {
-          color: #cccccc;
-          font-size: 1.2em;
-          margin-top: 8px; } }
-    .cd-primary-nav .cd-nav-icons .cd-nav-item::before {
-      /* item icon */
-      content: '';
-      display: block;
-      position: absolute;
-      left: 20px;
-      top: 50%;
-      margin-top: -20px;
-      width: 40px;
-      height: 40px;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: 35px 35px; }
-      @media only screen and (min-width: 1200px) {
-        .cd-primary-nav .cd-nav-icons .cd-nav-item::before {
-          top: 25%;
-          margin-top: 0;
-          width: 70px;
-          height: 70px;
-          background-size: 65px 65px; } }
-    .cd-primary-nav .cd-nav-icons .cd-nav-item.disabled {
-      line-height: 25px; }
-      .cd-primary-nav .cd-nav-icons .cd-nav-item.disabled h3 {
-        color: #fff;
-        margin-top: 5px; }
-        @media only screen and (min-width: 1200px) {
-          .cd-primary-nav .cd-nav-icons .cd-nav-item.disabled h3 {
-            margin-top: 0; } }
-        .cd-primary-nav .cd-nav-icons .cd-nav-item.disabled h3 small {
-          clear: both;
-          display: block;
-          line-height: 0.7rem;
-          font-size: 1.1em;
-          color: #fff;
-          font-weight: 600; }
-      .cd-primary-nav .cd-nav-icons .cd-nav-item.disabled:before {
-        fill: #fff; }
-    .cd-primary-nav .cd-nav-icons .cd-nav-item.worship::before {
-      background-image: url("/Content/ExternalSite/Icons/JofD/crown.svg"); }
-    .cd-primary-nav .cd-nav-icons .cd-nav-item.discipleship::before {
-      background-image: url("/Content/ExternalSite/Icons/JofD/discipleship.svg"); }
-    .cd-primary-nav .cd-nav-icons .cd-nav-item.community::before {
-      background-image: url("/Content/ExternalSite/Icons/JofD/community.svg"); }
-    .cd-primary-nav .cd-nav-icons .cd-nav-item.multiply::before {
-      background-image: url("/Content/ExternalSite/Icons/JofD/multiply.svg"); }
-    .cd-primary-nav .cd-nav-icons .cd-nav-item.calendar::before {
-      background-image: url("/Content/ExternalSite/Icons/calendar.svg"); }
-    .cd-primary-nav .cd-nav-icons .cd-nav-item.bulletin::before {
-      background-image: url("/Content/ExternalSite/Icons/bulletin.svg"); }
-  .cd-primary-nav .cd-nav-list .cd-nav-item p {
-    color: #cccccc;
-    font-size: 1.3rem;
-    /* hide description on small devices */
-    display: none; }
+        .cd-primary-nav .cd-nav-icons .cd-nav-item.disabled h3 {
+          margin-top: 0; } }
+    .cd-primary-nav .cd-nav-icons .cd-nav-item.disabled:before {
+      fill: #fff; }
+  .cd-primary-nav .cd-nav-icons .cd-nav-item.worship::before {
+    background-image: url("/Content/ExternalSite/Icons/JofD/crown.svg"); }
+  .cd-primary-nav .cd-nav-icons .cd-nav-item.discipleship::before {
+    background-image: url("/Content/ExternalSite/Icons/JofD/discipleship.svg"); }
+  .cd-primary-nav .cd-nav-icons .cd-nav-item.community::before {
+    background-image: url("/Content/ExternalSite/Icons/JofD/community.svg"); }
+  .cd-primary-nav .cd-nav-icons .cd-nav-item.multiply::before {
+    background-image: url("/Content/ExternalSite/Icons/JofD/multiply.svg"); }
+  .cd-primary-nav .cd-nav-icons .cd-nav-item.calendar-events::before {
+    background-image: url("/Content/ExternalSite/Icons/calendar.svg"); }
+  .cd-primary-nav .cd-nav-icons .cd-nav-item.bulletin::before {
+    background-image: url("/Content/ExternalSite/Icons/bulletin.svg"); }
+  .cd-primary-nav .cd-nav-visit .cd-nav-item h3 {
+    font-size: 1em;
+    margin-top: 0px;
+    font-weight: 600; }
   .cd-primary-nav .cd-nav-list .cd-nav-item h3 {
-    font-size: 1rem;
+    font-size: 1em;
     margin-top: 0px;
     font-weight: 600; }
     @media only screen and (min-width: 1200px) {
       .cd-primary-nav .cd-nav-list .cd-nav-item h3 {
         color: #cccccc;
-        font-size: 1.75rem;
+        font-size: 1.75em;
         margin-top: 8px; } }
-  .cd-primary-nav .cd-nav-sermons .cd-nav-item h3 {
-    font-size: 1rem;
+  .cd-primary-nav .cd-nav-label {
+    font-size: .9em;
+    margin-top: 0px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #cccccc;
+    margin: 0;
+    padding: 5px 20px;
+    line-height: 1.2;
+    background-color: #000; }
+    @media only screen and (min-width: 1200px) {
+      .cd-primary-nav .cd-nav-label {
+        padding: 0 0 5px;
+        background-color: transparent; } }
+  .cd-primary-nav .cd-nav-sermons li .cd-nav-item h3 {
+    font-size: 1em;
     margin-top: 0px;
     font-weight: 600; }
     @media only screen and (min-width: 1200px) {
-      .cd-primary-nav .cd-nav-sermons .cd-nav-item h3 {
+      .cd-primary-nav .cd-nav-sermons li .cd-nav-item h3 {
         color: #cccccc;
         font-weight: bold;
         font-size: 1.2em;
@@ -561,7 +567,7 @@ main {
         position: absolute;
         left: 0;
         bottom: 0;
-        height: 60px;
+        height: 70px;
         text-transform: none;
         width: 100%;
         overflow: hidden;
@@ -578,10 +584,10 @@ main {
           height: 100%;
           top: 0;
           left: 0;
-          font-size: 2rem;
+          font-size: 2em;
           font-weight: bold;
           text-align: center;
-          line-height: 60px;
+          line-height: 70px;
           border-top: 1px solid #000;
           /* reset some inherited style */
           border-bottom: none;
@@ -589,6 +595,12 @@ main {
           padding: 0;
           -webkit-transition: color 0.2s, background 0.2s, border 0.2s;
           transition: color 0.2s, background 0.2s, border 0.2s; }
+          .cd-primary-nav .cd-nav-visit > .see-all a:hover,
+          .cd-primary-nav .cd-nav-icons > .see-all a:hover,
+          .cd-primary-nav .cd-nav-list > .see-all a:hover,
+          .cd-primary-nav .cd-nav-sermons > .see-all a:hover {
+            background-color: #b3b1b1;
+            color: #333232 !important; }
     .cd-primary-nav .cd-nav-visit {
       padding: 0; }
       .cd-primary-nav .cd-nav-visit li {
@@ -611,7 +623,7 @@ main {
           height: auto;
           width: 100%;
           margin: 0 auto;
-          padding: 0 0 10px;
+          padding: 0 0 20px;
           opacity: 0.5;
           -webkit-transition: opacity 0.3s;
           transition: opacity 0.3s; }
@@ -622,7 +634,17 @@ main {
           font-size: 1em;
           color: #cccccc;
           font-weight: bold;
-          padding: 0 .4em 10px; }
+          padding: 15px .4em;
+          -webkit-transition: color 0.3s;
+          transition: color 0.3s; } }
+        @media only screen and (min-width: 1200px) and (min-width: 1200px) {
+          .cd-primary-nav .cd-nav-visit .cd-nav-item h3 {
+            font-size: 1.3em;
+            margin: 0; }
+            .cd-primary-nav .cd-nav-visit .cd-nav-item h3:hover {
+              color: #fff; } }
+
+@media only screen and (min-width: 1200px) {
     .cd-primary-nav .cd-nav-icons li {
       /* set here number of columns - use width percentage */
       /* child items within */ }
@@ -637,14 +659,6 @@ main {
         float: left; }
       .cd-primary-nav .cd-nav-icons li .disabled h3 {
         color: #fff; }
-        .cd-primary-nav .cd-nav-icons li .disabled h3 small {
-          clear: both;
-          display: block;
-          padding-left: 5px;
-          line-height: 0.9rem;
-          font-size: 1.1rem;
-          color: #fff;
-          font-weight: 600; }
       .cd-primary-nav .cd-nav-icons li .disabled:before {
         fill: #fff; }
       .cd-primary-nav .cd-nav-icons li li {
@@ -663,7 +677,7 @@ main {
     @media only screen and (min-width: 1200px) and (min-width: 1200px) {
       .cd-primary-nav .cd-nav-icons .cd-nav-item {
         height: 100px;
-        padding: 40px 0 40px 120px; }
+        padding: 40px 0 40px 130px; }
         .cd-primary-nav .cd-nav-icons .cd-nav-item:hover > h3 {
           color: #fff; } }
 
@@ -675,11 +689,18 @@ main {
         left: 40px;
         top: 20%; }
     .cd-primary-nav .cd-nav-list li {
-      /* set here number of columns - use width percentage */
-      width: 25%;
-      float: left; }
+      /* set here number of columns - use width percentage */ }
+      .cd-primary-nav .cd-nav-list li.hv-4-column {
+        width: 25%;
+        float: left; }
+      .cd-primary-nav .cd-nav-list li.hv-2-column {
+        width: 50%;
+        float: left; }
+        .cd-primary-nav .cd-nav-list li.hv-2-column .cd-nav-item {
+          font-size: 1.5em;
+          padding-bottom: 40px; }
       .cd-primary-nav .cd-nav-list li.border-right {
-        border-right: 1px solid #000; }
+        border-right: 1px solid #cccccc; }
     .cd-primary-nav .cd-nav-list .cd-nav-item {
       border-bottom: none;
       height: auto;
@@ -692,7 +713,18 @@ main {
         color: #cccccc;
         font-weight: bold;
         padding-bottom: 5px;
-        text-align: center; }
+        text-align: center;
+        font-size: 1em;
+        margin: 10px;
+        -webkit-transition: color 0.3s;
+        transition: color 0.3s; } }
+      @media only screen and (min-width: 1200px) and (min-width: 1200px) {
+        .cd-primary-nav .cd-nav-list .cd-nav-item h3 {
+          font-size: 1.2em; }
+          .cd-primary-nav .cd-nav-list .cd-nav-item h3:hover {
+            color: #fff; } }
+
+@media only screen and (min-width: 1200px) {
       .cd-primary-nav .cd-nav-list .cd-nav-item::before {
         left: 10%;
         top: 23%; }
@@ -710,26 +742,25 @@ main {
           float: left;
           padding-right: 60px; }
           .cd-primary-nav .cd-nav-sermons li.hv-3-column.border-right {
-            border-right: 1px solid #000; }
-        .cd-primary-nav .cd-nav-sermons li .cd-nav-label {
-          color: #cccccc;
-          text-transform: uppercase;
-          font-size: 0.6em;
-          letter-spacing: 2px;
-          font-weight: 400; }
+            border-right: 1px solid #cccccc; }
         .cd-primary-nav .cd-nav-sermons li .cd-nav-item {
           text-align: left;
           border-bottom: none;
           line-height: 1.2;
           padding: 10px 0;
           margin: 0;
-          position: relative; }
+          position: relative;
+          width: 100%; }
           .cd-primary-nav .cd-nav-sermons li .cd-nav-item h3 {
             -webkit-transition: color 0.3s;
             transition: color 0.3s;
-            line-height: 1.2; }
+            line-height: 1.2;
+            font-size: 1em; }
             .cd-primary-nav .cd-nav-sermons li .cd-nav-item h3:hover {
               color: #fff; } }
+          @media only screen and (min-width: 1200px) and (min-width: 1200px) {
+            .cd-primary-nav .cd-nav-sermons li .cd-nav-item h3 {
+              font-size: 1.3em; } }
 
 .has-children > a.arrow, .has-children > a > div.arrow, .go-back a.arrow {
   position: relative;
