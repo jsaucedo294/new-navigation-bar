@@ -601,6 +601,9 @@ main {
           .cd-primary-nav .cd-nav-sermons > .see-all a:hover {
             background-color: #b3b1b1;
             color: #333232 !important; }
+    .cd-primary-nav ul.centered {
+      display: flex;
+      justify-content: center; }
     .cd-primary-nav .cd-nav-visit {
       padding: 0; }
       .cd-primary-nav .cd-nav-visit li {
@@ -676,7 +679,7 @@ main {
         transform: translateX(-50%); } }
     @media only screen and (min-width: 1200px) and (min-width: 1200px) {
       .cd-primary-nav .cd-nav-icons .cd-nav-item {
-        height: 100px;
+        height: 130px;
         padding: 40px 0 40px 130px; }
         .cd-primary-nav .cd-nav-icons .cd-nav-item:hover > h3 {
           color: #fff; } }
@@ -698,7 +701,7 @@ main {
         float: left; }
         .cd-primary-nav .cd-nav-list li.hv-2-column .cd-nav-item {
           font-size: 1.5em;
-          padding-bottom: 40px; }
+          padding-bottom: 60px; }
       .cd-primary-nav .cd-nav-list li.border-right {
         border-right: 1px solid #cccccc; }
     .cd-primary-nav .cd-nav-list .cd-nav-item {

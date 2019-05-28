@@ -686,7 +686,10 @@ main {
 				}
 			}
 		}
-
+		ul.centered {
+			display: flex;
+			justify-content: center;
+		}
 
 		.cd-nav-visit {
 			padding:0;
@@ -785,7 +788,7 @@ main {
 				}
 
 				@include MQ(L) {
-					height: 100px;
+					height: 130px;
 					padding: 40px 0 40px 130px;
 
 					&:hover > h3 {
@@ -815,7 +818,7 @@ main {
 					@include column(.5);
 					.cd-nav-item {
 						font-size: 1.5em;
-						padding-bottom: 40px;
+						padding-bottom: 60px;
 					}
 				}
 
