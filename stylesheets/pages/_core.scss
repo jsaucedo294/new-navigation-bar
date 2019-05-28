@@ -13,12 +13,6 @@ Primary style
 }
 
 body {
-	font: {
-		family: $primary-font; // variables inside partials > _variables.scss
-	}
-	color: $color-4;
-	background-color: $color-1;
-
 	@include MQ(maxL) { // layout mixins inside partials > _layout.scss
 		&.nav-on-left.overflow-hidden {
 			overflow: hidden;
@@ -26,13 +20,6 @@ body {
 	}
 }
 
-a {
-	color: $color-4;
-	text-decoration: none;
-}
-ul li {
-	list-style: none;
-}
 img {
 	/* make images responsive */
 	max-width: 100%;
@@ -282,6 +269,9 @@ main {
 }
 
 .cd-primary-nav, .cd-primary-nav ul {
+	li {
+		list-style: none;
+	}
 	padding-left: 0;
 	font-size: 1em;
 	position: fixed !important;
@@ -355,7 +345,7 @@ main {
 			line-height: 60px;
 		}
 		padding: 0 20px;
-		color: $color-4;
+		color: $color-4 !important;
 		text-decoration: none;
 		-webkit-font-smoothing: antialiased;
   		-moz-osx-font-smoothing: grayscale;
@@ -391,10 +381,10 @@ main {
 
 	overflow: hidden;
 
-	.cd-nav-gallery .cd-nav-item,
+	.cd-nav-visit .cd-nav-item,
 	.cd-nav-icons .cd-nav-item,
 	.cd-nav-list .cd-nav-item,
-	.cd-dash-icons .cd-nav-item {
+	.cd-nav-sermons .cd-nav-item {
 		/* items with picture (or icon) and title */
 		height: 50px;
 		line-height: 50px;
@@ -407,7 +397,7 @@ main {
 			text-overflow: ellipsis;
 		}
 	}
-	.cd-nav-icons .nav-current-series {
+	.cd-nav-sermons .nav-current-series {
 		display: none;
 		@include MQ(L){
 			display: block;
@@ -416,13 +406,6 @@ main {
 	.cd-nav-icons .cd-nav-item {
 		padding-left: 20px;
 
-		p {
-			color: $color-4;
-			font-size: 1.3em;
-			/* hide description on small devices */
-			display: none;
-		}
-
 		h3 {
 			font-size: 1em;
 			margin-top: 0px;
@@ -430,7 +413,7 @@ main {
 
 			@include MQ(L) {
 				color: $color-4;
-				font-size:1.2em;
+				font-size: 1.2em;
 		        margin-top: 8px;
 			}
 		}
@@ -522,28 +505,23 @@ main {
 		}
 	}
 
-	.cd-dash-icons .cd-nav-item {
+	.cd-nav-sermons .cd-nav-item {
 
 		h3 {
 			font-size: 1rem;
 			margin-top: 0px;
-			font-weight: 200;
+			font-weight: 600;
 
 			@include MQ(L) {
 				color: $color-4;
 				font-weight: bold;
-				font-size:1.75rem;
-				margin-top: 8px;
+				font-size: 1.2em;
+				margin: 0;
+				line-height: 1;
 			}
 		}
 	}
 
-	.cd-secondary-nav {
-		&.moves-out {
-			/* push the navigation items to the left - and lower down opacity - when tertiary nav slides in */
-			@include transform(translateX(-100%));
-		}
-	}
 
 	@include MQ(maxL) {
 		/* by default .cd-primary-nav is hidden - trick for iOS devices where you can see the navigation if you pull down */
@@ -635,11 +613,10 @@ main {
 			display: none;
 		}
 
-		.cd-secondary-nav,
-		.cd-nav-gallery,
+		.cd-nav-visit,
 		.cd-nav-icons,
 		.cd-nav-list,
-		.cd-dash-icons {
+		.cd-nav-sermons {
 			/* dropdown menu style */
 			position: absolute;
 			top: $header-height-L;
@@ -698,120 +675,10 @@ main {
 			}
 		}
 
-		.cd-secondary-nav {
 
-			> div.extralinks {
-				width: auto;
-				float: none;
-				position: relative;
-				overflow: hidden;
-				height: auto;
-				// padding-right: 3rem;
-
-				@include MQ(L) {
-					// padding-right: 3rem;
-					@include column(.25);
-					position: relative;
-					overflow: hidden;
-					height: 23.5rem;
-					// padding-left: 3rem;
-				}
-
-				&.border-right {
-					border-right: 1px solid $color-5;
-				}
-			}
-
-			> li {
-				/* change the height according to your needs - you can even set height: auto */
-				height: auto;
-				/* here you set the number of columns - use width percentage */
-				@include column(.23); // see partials > _layout.scss
-				margin-right: 2.66%;
-				// border-right: 1px solid $color-3;
-				overflow: hidden;
-				-webkit-overflow-scrolling: touch;
-
-
-				&:nth-child(4n+2) {
-					/* +2 because we have 2 list items with display:none */
-					margin-right: 0;
-					border-right: none;
-				}
-
-				> a {
-					/* secondary nav title */
-					color: $color-4;
-					font-weight: bold;
-					font-size: 1em;
-					margin-bottom: .6em;
-				}
-			}
-
-			a {
-				// height: 30px;
-				// line-height: 30px;
-				// padding: 0 18% 0 0;
-				color: $color-4;
-				border-bottom: none;
-				font-size: 1.2em;
-				font-weight: bold;
-				text-transform: none;
-
-				border-bottom: none;
-			    height: auto;
-			    position: relative;
-
-			}
-
-			ul {
-				/* Force Hardware Acceleration in WebKit */
-				@include transform(translateZ(0));
-			}
-
-			ul {
-				/* tertiary navigation */
-				position: absolute;
-				top: 0;
-				left: 0;
-				height: 100%;
-				width: 100%;
-				background-color: $color-1;
-				padding-left: 3em;
-
-				li {
-					a {
-						line-height: 3.3em;
-					}
-				}
-
-				&.is-hidden {
-					@include transform(translateX(100%));
-				}
-
-				.go-back {
-					display: block;
-
-					a {
-						color: rgba($color-4, 0.5);
-					}
-				}
-
-				.see-all {
-					display: block;
-				}
-			}
-
-
-			.moves-out {
-				/* push the navigation items to the left - and lower down opacity - when tertiary nav slides in */
-				@include transform(translateX(-100%));
-			}
-		}
-
-		.cd-nav-gallery {
-
+		.cd-nav-visit {
 			padding:0;
+
 			li {
 				/* set here number of columns - use width percentage */
 				// @include column(.22);
@@ -835,8 +702,7 @@ main {
 					position: static;
 					margin-top: 0;
 					height: auto;
-					height: 400px;
-					object-fit: cover;
+					width: 100%;
 					margin: 0 auto;
 					padding: 0 0 10px;
 					opacity: 0.5;
@@ -848,7 +714,7 @@ main {
 
 				h3 {
 					margin-top: 15px;
-					font-size: 1.2rem;
+					font-size: 1em;
 					color: $color-4;
 					font-weight: bold;
 					padding: 0 .4em 10px;
@@ -859,17 +725,14 @@ main {
 		.cd-nav-icons {
 			li {
 				/* set here number of columns - use width percentage */
-				&.se-6-column {
-					@include column(.43);
-				}
-				&.se-4-column {
+				&.hv-4-column {
 					@include column(.25);
 				}
-				&.se-3-column {
+				&.hv-3-column {
 					@include column(.3333);
 				}
-				&.border-right {
-					border-right: 1px solid $color-5;
+				&.hv-2-column {
+					@include column(.43);
 				}
 
 				.disabled {
@@ -904,6 +767,11 @@ main {
 				line-height: 1.2;
 				padding: 5px 20px 5px 85px;
 				position: relative;
+				
+				&.centered {
+					left: 50%;
+					transform: translateX(-50%);
+				}
 
 				@include MQ(L) {
 					height: 100px;
@@ -919,11 +787,6 @@ main {
 					font-weight: bold;
 				}
 
-				p {
-					display: block;
-					white-space: normal;
-				}
-
 				&::before {
 					left: 40px;
     				top: 20%;
@@ -932,12 +795,6 @@ main {
 		}
 
 		.cd-nav-list {
-			&.include-see-all {
-				li:last-child {
-					/* This gives some space for the "See All" button */
-					margin-bottom: 50px;
-				}
-			}
 			li {
 				/* set here number of columns - use width percentage */
 				@include column(.25);
@@ -953,16 +810,14 @@ main {
 				line-height: 1.2;
 				padding: 0px 20px 5px 30px;
 				position: relative;
+				width: 100%;
+				float: left;
 
 				h3 {
 					color: $color-4;
 					font-weight: bold;
 					padding-bottom: 5px;
-				}
-
-				p {
-					display: block;
-					white-space: normal;
+					text-align: center;
 				}
 
 				&::before {
@@ -972,44 +827,51 @@ main {
 			}
 		}
 
-		.cd-dash-icons {
-
-			padding: 48px 64px 130px;
+		.cd-nav-sermons {
+			padding: 28px 64px 48px;
 			border-bottom: 0px;
 
 		    li {
 		        /* set here number of columns - use width percentage */
-		        @include column(.483);
-		        // margin: 0 2% 20px 0;
-		        margin: 0 0.65% 20px 0.65%;
-
-		        // &:nth-child(3n+2) {
-		        //     /* +2 because we have two additional list items with display:none */
-		        //     margin-right: 0;
-		        // }
-		    }
-
-
-		    .cd-nav-item {
-				text-align: left;
-		        border-bottom: none;
-		        height: 80px;
-		        line-height: 1.2;
-		        padding: 7px 0 0 22px;
-		        //padding: 0 0 0 85px;
-		        position: relative;
-
-		        &:hover {
-		            background: lighten($color-1, 8%);
-		        }
-
-				span.niche {
-					width: 75px;
-				    background-color: $color-1;
-				    height: 3px;
-				    display: inline-block;
+		        &.hv-4-column {
+					@include column(.30);
+					padding-left: 60px;
 				}
-			}
+				&.hv-3-column {
+					@include column(.3333);
+					padding-right: 60px;
+					&.border-right {
+						border-right: 1px solid $color-5;
+					}
+				}
+
+				.cd-nav-label {
+					color: $color-4;
+					text-transform: uppercase;
+					font-size: 0.6em;
+					letter-spacing: 2px;
+					font-weight: 400;
+				}
+
+				.cd-nav-item {
+					text-align: left;
+					border-bottom: none;
+					line-height: 1.2;
+					padding: 10px 0;
+					margin: 0;
+					position: relative;
+	
+					
+					h3 {
+						@include transition(color .3s);
+						line-height: 1.2;
+						&:hover {
+							color: $color-2;
+						}
+					}
+	
+				}
+		    }
 		}
 	}
 }
@@ -1118,11 +980,6 @@ main {
 		&.selected::after {
 			@include transform(rotate(45deg));
 		}
-	}
-
-	.cd-secondary-nav > .has-children > a::before, .cd-secondary-nav > .has-children > a::after {
-		/* remove arrows on secondary nav titles */
-		display: none;
 	}
 
 	.cd-primary-nav .go-back a {
