@@ -696,6 +696,12 @@ main {
       .cd-primary-nav .cd-nav-list li.hv-4-column {
         width: 25%;
         float: left; }
+      .cd-primary-nav .cd-nav-list li.hv-3-column {
+        width: 33.3%;
+        float: left; }
+        .cd-primary-nav .cd-nav-list li.hv-3-column .cd-nav-item {
+          font-size: 1.2em;
+          padding-bottom: 60px; }
       .cd-primary-nav .cd-nav-list li.hv-2-column {
         width: 50%;
         float: left; }

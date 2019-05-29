@@ -814,6 +814,13 @@ main {
 				&.hv-4-column {
 					@include column(.25);
 				}
+				&.hv-3-column {
+					@include column(.333);
+					.cd-nav-item {
+						font-size: 1.2em;
+						padding-bottom: 60px;
+					}
+				}
 				&.hv-2-column {
 					@include column(.5);
 					.cd-nav-item {
