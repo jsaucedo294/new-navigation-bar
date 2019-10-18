@@ -1,0 +1,61 @@
+/*************************************************/
+/************    HEADER & CONTENT   **************/
+/*************************************************/
+
+.cd-main-content, .cd-main-header {
+	position: relative;
+	@include transition(transform .3s,background-color .3s, visibility 0s 0s);
+
+	li {
+		font-weight: 600;
+	}
+
+	@include MQ(maxL) {
+		&.nav-is-visible {
+			@include transform(translateX(-$nav-width-S));
+		}
+
+		.nav-on-left &.nav-is-visible {
+			@include transform(translateX($nav-width-S));
+		}
+	}
+}
+
+/************    CONTENT   **************/
+.cd-main-content {
+	// background: lighten($color-3, 8%);
+	min-height: 100vh;
+	z-index: $content;
+}
+
+
+/************    HEADER    **************/
+.cd-main-header {
+	height: $header-height-S;
+	background: $color-1;
+	z-index: $above-all-content;
+
+	-webkit-box-shadow: 1px 1px 0px 0px rgba($color-5, 0.6);
+	-moz-box-shadow: 1px 1px 0px 0px rgba($color-5, 0.6);
+	box-shadow: 1px 1px 0px 0px rgba($color-5, 0.6);
+
+	&.nav-is-fixed {
+		/* add .nav-is-fixed class to body if you want a fixed navigation on > 1170px */
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	@include MQ(L) {
+		height: $header-height-L;
+		@include clearfix;
+	}
+}
+
+main {
+	margin-top: $header-height-S;
+	@include MQ(L) {
+		margin-top: $header-height-L;
+	}
+}

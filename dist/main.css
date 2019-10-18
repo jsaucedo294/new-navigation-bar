@@ -19,6 +19,9 @@ img {
 Main components
 
 -------------------------------- */
+/*************************************************/
+/************    HEADER & CONTENT   **************/
+/*************************************************/
 .cd-main-content, .cd-main-header {
   position: relative;
   -webkit-transition: transform 0.3s, background-color 0.3s, visibility 0s 0s;
@@ -217,7 +220,7 @@ main {
   height: 35px;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url("/Content/ExternalSite/Icons/login-icon.svg"); }
+  background-image: url("https://www.highview.org/Content/ExternalSite/Icons/login-icon.svg"); }
 
 .large_screen_only {
   display: none; }

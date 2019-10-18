@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Calendar Card</title>
-    <link rel="stylesheet" href="stylesheets/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheets/vendors/themify-icons.css">
-
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
 
 </head>
-<body class="nav-is-fixed">
-    <header class="cd-main-header gray-header">
+<body>
+
+    <!-- HEADER -->
+    <header class="cd-main-header gray-header nav-is-fixed ">
         <a class="cd-logo" href="/">
             <img class="logo logo-light" alt="Highview" src="https://www.highview.org/Themes/HighViewNew/Assets/img/HV-Icon-White.png"/>
         </a>
         <nav class="cd-nav">
-           <ul id="cd-primary-nav" class="cd-primary-nav is-fixed" data-scroll-id="cd-primary-nav">
+           <ul id="cd-primary-nav" class="cd-primary-nav" data-scroll-id="cd-primary-nav">
             <div class="nav-logo-and-social-container">
                 <a href="/">
                     <img class="nav-logo" src="/img/HV-Logo-White.png">
@@ -37,27 +39,27 @@
                         <a href="/locations">Visit Highview</a>
                     </li>
                     <li class="hv-4-column">
-                        <a class="cd-nav-item" href="/">
+                        <a class="cd-nav-item fegenbush-icon" href="/">
+                            <img src="https://highview.org/Content/ExternalSite/Campuses/Fegenbush_Campus_2.jpg" class="img-responsive">
                             <h3>Fegenbush Campus</h3>
-                            <img src="https://highview.org/Content/ExternalSite/Campuses/Fegenbush_Campus_2.png" class="img-responsive">
                         </a>
                     </li>
                     <li class="hv-4-column">
-                        <a class="cd-nav-item" href="/">
+                        <a class="cd-nav-item east-icon" href="/">
+                            <img src="https://highview.org/Content/ExternalSite/Campuses/East_Campus_2.jpg" class="img-responsive">
                             <h3>East Campus</h3>
-                            <img src="https://highview.org/Content/ExternalSite/Campuses/East_Campus_2.png" class="img-responsive">
                         </a>
                     </li>
                     <li class="hv-4-column">
-                        <a class="cd-nav-item" href="/">
+                        <a class="cd-nav-item valley-icon" href="/">
+                            <img src="https://highview.org/Content/ExternalSite/Campuses/Valley_Campus_2.jpg" class="img-responsive">
                             <h3>Valley Station Campus</h3>
-                            <img src="https://highview.org/Content/ExternalSite/Campuses/Valley_Campus_2.png" class="img-responsive">
                         </a>
                     </li>
                     <li class="hv-4-column">
-                        <a class="cd-nav-item" href="/">
+                        <a class="cd-nav-item espanol-icon" href="/">
+                            <img src="https://highview.org/Content/ExternalSite/Campuses/Fegenbush_Campus_2.jpg" class="img-responsive">
                             <h3>Highview en Español</h3>
-                            <img src="https://highview.org/Content/ExternalSite/Campuses/Fegenbush_Campus_2.png" class="img-responsive">
                         </a>
                     </li>
                 </ul>
@@ -129,6 +131,16 @@
                     <li class="hv-4-column">
                         <a class="cd-nav-item" href="/recreation">
                             <h3>Recreation</h3>
+                        </a>
+                    </li>
+                    <li class="hv-4-column">
+                        <a class="cd-nav-item" href="/recreation">
+                            <h3>English Classes</h3>
+                        </a>
+                    </li>
+                    <li class="hv-4-column">
+                        <a class="cd-nav-item" href="/recreation">
+                            <h3>Counseling</h3>
                         </a>
                     </li>
             </ul>
@@ -216,17 +228,22 @@
             <li><a class="cd-nav-login" href="/" title="Login">Login<span></span></a></li>
             <li><a class="cd-nav-trigger" href="#cd-primary-nav">Menu<span></span></a></li>
          </ul>
-        </header>
+    </header>
+
+
+     <!-- CONTENT --->
         <div class="cd-overlay"></div>
         <div class="cd-main-content">
+        <main>
           <div class="header-content" style="background-color: #003d4c; margin: 0">
             <h1 style="text-align: center; padding: 60px 0; color: #fff">Welcome to my Codepen</h1>
           </div>
-          <div class="content">
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sit, nemo aspernatur aut tempora placeat repellat quo recusandae, tenetur inventore explicabo laboriosam ipsum nulla. Nobis provident nisi dolorum nihil deserunt. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus molestiae reprehenderit a iure architecto nemo maiores eveniet, at, soluta dicta quaerat nam iste. Ipsum laudantium minus explicabo accusantium dolor aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quae laborum excepturi voluptatum sequi omnis facilis, possimus numquam asperiores! Libero, illum corporis. Animi atque sint rerum magnam aliquid culpa cupiditate?</h3>
-          </div>
-        </div>
-        <div style="height: 4000px; width: 100%; background-color: green"></div>
+        
+          <div style="height: 4000px; width: 100%; background-color: green"></div>
+        </main>
+    </div>
+        
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>

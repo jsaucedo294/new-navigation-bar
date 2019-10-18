@@ -1,29 +1,6 @@
-/* --------------------------------
-
-Primary style
-
--------------------------------- */
-*, *::after, *::before {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-@media only screen and (max-width: 1199px) {
-  body.nav-on-left.overflow-hidden {
-    overflow: hidden;
-  }
-}
-
-img {
-  /* make images responsive */
-  max-width: 100%;
-}
-
-/* --------------------------------
-
-Main components
-
--------------------------------- */
+/*************************************************/
+/************    HEADER & CONTENT   **************/
+/*************************************************/
 .cd-main-content, .cd-main-header {
   position: relative;
   -webkit-transition: transform 0.3s, background-color 0.3s, visibility 0s 0s;
@@ -48,11 +25,13 @@ Main components
   }
 }
 
+/************    CONTENT   **************/
 .cd-main-content {
   min-height: 100vh;
   z-index: 2;
 }
 
+/************    HEADER    **************/
 .cd-main-header {
   height: 70px;
   background: #333232;
@@ -61,7 +40,7 @@ Main components
   box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.6);
 }
 
-.nav-is-fixed .cd-main-header {
+.cd-main-header.nav-is-fixed {
   /* add .nav-is-fixed class to body if you want a fixed navigation on > 1170px */
   position: fixed;
   top: 0;
@@ -90,195 +69,9 @@ main {
   }
 }
 
-.cd-logo {
-  position: absolute;
-  top: 10px;
-  left: 1.2em;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
-.cd-logo img {
-  display: block;
-  height: 50px;
-  padding: 10px;
-}
-
-.cd-logo img.inverse {
-  display: none;
-}
-
-@media only screen and (max-width: 1199px) {
-  .nav-on-left .cd-logo {
-    left: auto;
-    right: 5%;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .cd-logo {
-    top: 15px;
-    left: 4em;
-  }
-  .cd-logo img {
-    padding: 7px;
-  }
-}
-
-.cd-header-buttons {
-  position: absolute;
-  display: inline-block;
-  top: 12px;
-  right: 20px;
-}
-
-.cd-header-buttons li {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-@media only screen and (max-width: 1199px) {
-  .nav-on-left .cd-header-buttons {
-    right: auto;
-    left: 5%;
-  }
-  .nav-on-left .cd-header-buttons li {
-    float: right;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .cd-header-buttons {
-    top: 18px;
-    right: 40px;
-    padding-left: 0px;
-  }
-}
-
-.cd-nav-trigger,
-.cd-nav-login {
-  position: relative;
-  display: block;
-  width: 44px;
-  height: 44px;
-  overflow: hidden;
-  white-space: nowrap;
-  /* hide text */
-  color: transparent !important;
-  z-index: 4;
-}
-
-.cd-nav-trigger span, .cd-nav-trigger span::before, .cd-nav-trigger span::after {
-  /* hamburger icon in CSS */
-  position: absolute;
-  display: inline-block;
-  height: 3px;
-  width: 24px;
-  background: #fff;
-}
-
-.cd-nav-trigger span {
-  /* line in the center */
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  margin-top: -2px;
-  -webkit-transition: background 0.3s 0.3s;
-  transition: background 0.3s 0.3s;
-}
-
-.cd-nav-trigger span::before, .cd-nav-trigger span::after {
-  /* other 2 lines */
-  content: '';
-  right: 0;
-  /* Force Hardware Acceleration in WebKit */
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform-origin: 0% 50%;
-  transform-origin: 0% 50%;
-  -webkit-transition: transform 0.3s 0.3s;
-  -webkit-transition: -webkit-transform 0.3s 0.3s;
-  transition: -webkit-transform 0.3s 0.3s;
-  transition: transform 0.3s 0.3s;
-  transition: transform 0.3s 0.3s, -webkit-transform 0.3s 0.3s;
-}
-
-.cd-nav-trigger span::before {
-  /* menu icon top line */
-  top: -6px;
-}
-
-.cd-nav-trigger span::after {
-  /* menu icon bottom line */
-  top: 6px;
-}
-
-.cd-nav-trigger.nav-is-visible span {
-  /* hide line in the center */
-  background: rgba(255, 255, 255, 0);
-}
-
-.cd-nav-trigger.nav-is-visible span::before, .cd-nav-trigger.nav-is-visible span::after {
-  /* keep visible other 2 lines */
-  background: white;
-}
-
-.cd-nav-trigger.nav-is-visible span::before {
-  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);
-  transform: translateX(4px) translateY(-3px) rotate(45deg);
-}
-
-.cd-nav-trigger.nav-is-visible span::after {
-  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);
-  transform: translateX(4px) translateY(2px) rotate(-45deg);
-}
-
-@media only screen and (min-width: 1200px) {
-  .cd-nav-trigger {
-    display: none;
-  }
-}
-
-.cd-nav-login::before {
-  /* profile icon */
-  content: '';
-  position: absolute;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
-  /* Force Hardware Acceleration in WebKit */
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.cd-nav-login::before {
-  /* SVG */
-  content: '';
-  display: block;
-  position: absolute;
-  top: 50%;
-  margin-top: -17px;
-  width: 35px;
-  height: 35px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-image: url("/Content/ExternalSite/Icons/login-icon.svg");
-}
-
-.large_screen_only {
-  display: none;
-}
-
-@media only screen and (min-width: 1200px) {
-  .large_screen_only {
-    display: block;
-  }
-}
-
+/********************************************/
+/************    PRIMARY NAV   **************/
+/********************************************/
 .cd-primary-nav, .cd-primary-nav ul {
   padding-left: 0;
   font-size: 1em;
@@ -291,7 +84,7 @@ main {
   background: #333232;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  z-index: 1;
+  z-index: 0;
   -webkit-box-shadow: inset 1px 0px 0px 0px #000;
   box-shadow: inset 1px 0px 0px 0px #000;
   -webkit-transition: transform 0.3s;
@@ -303,6 +96,12 @@ main {
 
 .cd-primary-nav li, .cd-primary-nav ul li {
   list-style: none;
+}
+
+.cd-primary-nav ul, .cd-primary-nav ul ul {
+  position: fixed;
+  top: 0;
+  overflow-x: hidden;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -357,12 +156,6 @@ main {
   width: 24px !important;
   height: 24px !important;
   font-size: 20px !important;
-}
-
-.cd-primary-nav ul, .cd-primary-nav ul ul {
-  position: fixed;
-  top: 0;
-  overflow-x: hidden;
 }
 
 .cd-primary-nav a, .cd-primary-nav div.disabled, .cd-primary-nav ul a, .cd-primary-nav ul div.disabled {
@@ -509,27 +302,27 @@ main {
 }
 
 .cd-primary-nav .cd-nav-icons .cd-nav-item.worship::before {
-  background-image: url("/Content/ExternalSite/Icons/JofD/crown.svg");
+  background-image: url("https://www.highview.org/Content/ExternalSite/Icons/JofD/crown.svg");
 }
 
 .cd-primary-nav .cd-nav-icons .cd-nav-item.discipleship::before {
-  background-image: url("/Content/ExternalSite/Icons/JofD/discipleship.svg");
+  background-image: url("https://www.highview.org/Content/ExternalSite/Icons/JofD/discipleship.svg");
 }
 
 .cd-primary-nav .cd-nav-icons .cd-nav-item.community::before {
-  background-image: url("/Content/ExternalSite/Icons/JofD/community.svg");
+  background-image: url("https://www.highview.org/Content/ExternalSite/Icons/JofD/community.svg");
 }
 
 .cd-primary-nav .cd-nav-icons .cd-nav-item.multiply::before {
-  background-image: url("/Content/ExternalSite/Icons/JofD/multiply.svg");
+  background-image: url("https://www.highview.org/Content/ExternalSite/Icons/JofD/multiply.svg");
 }
 
 .cd-primary-nav .cd-nav-icons .cd-nav-item.calendar-events::before {
-  background-image: url("/Content/ExternalSite/Icons/calendar.svg");
+  background-image: url("https://www.highview.org/Content/ExternalSite/Icons/calendar.svg");
 }
 
 .cd-primary-nav .cd-nav-icons .cd-nav-item.bulletin::before {
-  background-image: url("/Content/ExternalSite/Icons/bulletin.svg");
+  background-image: url("https://www.highview.org/Content/ExternalSite/Icons/bulletin.svg");
 }
 
 .cd-primary-nav .cd-nav-visit .cd-nav-item h3 {
@@ -615,6 +408,10 @@ main {
     float: right;
     overflow: visible;
     background: #333232;
+    /******* CAMPUSES NAV PAGES STYLES *******/
+    /******* JoD NAV PAGES STYLES & EVENTS, CALENDAR *******/
+    /******* MINISTRIES *******/
+    /******* SERMONS *******/
   }
   .cd-primary-nav::after {
     clear: both;
@@ -783,20 +580,30 @@ main {
     margin-bottom: 50px;
   }
   .cd-primary-nav .cd-nav-visit .cd-nav-item {
-    border-bottom: none;
-    padding: 0;
+    padding: 40px 50px;
     height: 100%;
     line-height: 1.2;
     text-align: center;
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .cd-primary-nav .cd-nav-visit .cd-nav-item img {
     position: static;
-    margin-top: 0;
-    height: auto;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 0 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
     opacity: 0.5;
     -webkit-transition: opacity 0.3s;
     transition: opacity 0.3s;
@@ -805,27 +612,18 @@ main {
     opacity: 1;
   }
   .cd-primary-nav .cd-nav-visit .cd-nav-item h3 {
+    text-transform: uppercase;
     margin-top: 15px;
-    font-size: 1em;
+    font-size: .9em;
     color: #cccccc;
     font-weight: bold;
     padding: 15px .4em;
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
   }
-}
-
-@media only screen and (min-width: 1200px) and (min-width: 1200px) {
-  .cd-primary-nav .cd-nav-visit .cd-nav-item h3 {
-    font-size: 1.3em;
-    margin: 0;
-  }
   .cd-primary-nav .cd-nav-visit .cd-nav-item h3:hover {
     color: #fff;
   }
-}
-
-@media only screen and (min-width: 1200px) {
   .cd-primary-nav .cd-nav-icons li {
     /* set here number of columns - use width percentage */
     /* child items within */
@@ -892,6 +690,14 @@ main {
   .cd-primary-nav .cd-nav-list li.hv-4-column {
     width: 25%;
     float: left;
+  }
+  .cd-primary-nav .cd-nav-list li.hv-3-column {
+    width: 33.3%;
+    float: left;
+  }
+  .cd-primary-nav .cd-nav-list li.hv-3-column .cd-nav-item {
+    font-size: 1.2em;
+    padding-bottom: 60px;
   }
   .cd-primary-nav .cd-nav-list li.hv-2-column {
     width: 50%;
@@ -1100,6 +906,221 @@ main {
   }
 }
 
+/**** **** ****    GENERAL STYLES   **** **** ****/
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1199px) {
+  body.nav-on-left.overflow-hidden {
+    overflow: hidden;
+  }
+}
+
+img {
+  /* make images responsive */
+  max-width: 100%;
+}
+
+/**** **** ****    COMPONENTS   **** **** ****/
+/*************************************/
+/************    LOGO   **************/
+/*************************************/
+.cd-logo {
+  position: absolute;
+  top: 10px;
+  left: 1.2em;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  z-index: 3;
+}
+
+.cd-logo img {
+  display: block;
+  height: 50px;
+  padding: 10px;
+}
+
+.cd-logo img.inverse {
+  display: none;
+}
+
+@media only screen and (max-width: 1199px) {
+  .nav-on-left .cd-logo {
+    left: auto;
+    right: 5%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .cd-logo {
+    top: 15px;
+    left: 4em;
+  }
+  .cd-logo img {
+    padding: 7px;
+  }
+}
+
+/***********************************************/
+/************    HEADER BUTTONS   **************/
+/***********************************************/
+.cd-header-buttons {
+  position: absolute;
+  display: inline-block;
+  top: 12px;
+  right: 20px;
+}
+
+.cd-header-buttons li {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+@media only screen and (max-width: 1199px) {
+  .nav-on-left .cd-header-buttons {
+    right: auto;
+    left: 5%;
+  }
+  .nav-on-left .cd-header-buttons li {
+    float: right;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .cd-header-buttons {
+    top: 18px;
+    right: 40px;
+    padding-left: 0px;
+  }
+}
+
+.cd-nav-trigger,
+.cd-nav-login {
+  position: relative;
+  display: block;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  white-space: nowrap;
+  /* hide text */
+  color: transparent !important;
+  z-index: 4;
+}
+
+.cd-nav-trigger span, .cd-nav-trigger span::before, .cd-nav-trigger span::after {
+  /* hamburger icon in CSS */
+  position: absolute;
+  display: inline-block;
+  height: 3px;
+  width: 24px;
+  background: #fff;
+}
+
+.cd-nav-trigger span {
+  /* line in the center */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -2px;
+  -webkit-transition: background 0.3s 0.3s;
+  transition: background 0.3s 0.3s;
+}
+
+.cd-nav-trigger span::before, .cd-nav-trigger span::after {
+  /* other 2 lines */
+  content: '';
+  right: 0;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-origin: 0% 50%;
+  transform-origin: 0% 50%;
+  -webkit-transition: transform 0.3s 0.3s;
+  -webkit-transition: -webkit-transform 0.3s 0.3s;
+  transition: -webkit-transform 0.3s 0.3s;
+  transition: transform 0.3s 0.3s;
+  transition: transform 0.3s 0.3s, -webkit-transform 0.3s 0.3s;
+}
+
+.cd-nav-trigger span::before {
+  /* menu icon top line */
+  top: -6px;
+}
+
+.cd-nav-trigger span::after {
+  /* menu icon bottom line */
+  top: 6px;
+}
+
+.cd-nav-trigger.nav-is-visible span {
+  /* hide line in the center */
+  background: rgba(255, 255, 255, 0);
+}
+
+.cd-nav-trigger.nav-is-visible span::before, .cd-nav-trigger.nav-is-visible span::after {
+  /* keep visible other 2 lines */
+  background: white;
+}
+
+.cd-nav-trigger.nav-is-visible span::before {
+  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);
+  transform: translateX(4px) translateY(-3px) rotate(45deg);
+}
+
+.cd-nav-trigger.nav-is-visible span::after {
+  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);
+  transform: translateX(4px) translateY(2px) rotate(-45deg);
+}
+
+@media only screen and (min-width: 1200px) {
+  .cd-nav-trigger {
+    display: none;
+  }
+}
+
+.cd-nav-login::before {
+  /* profile icon */
+  content: '';
+  position: absolute;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.cd-nav-login::before {
+  /* SVG */
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  width: 35px;
+  height: 35px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("https://www.highview.org/Content/ExternalSite/Icons/login-icon.svg");
+}
+
+.large_screen_only {
+  display: none;
+}
+
+@media only screen and (min-width: 1200px) {
+  .large_screen_only {
+    display: block;
+  }
+}
+
+/************    OVERLAY   **************/
 .cd-overlay {
   /* shadow layer visible when navigation is active */
   position: fixed;
@@ -1142,11 +1163,7 @@ main {
   }
 }
 
-/* --------------------------------
-
-support for no js
-
--------------------------------- */
+/**** **** ****    SUPPORT FOR NO JS   **** **** ****/
 .no-js .cd-primary-nav {
   position: relative;
   height: auto;
