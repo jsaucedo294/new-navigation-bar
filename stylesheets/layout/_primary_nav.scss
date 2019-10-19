@@ -3,7 +3,7 @@
 /********************************************/
 .cd-primary-nav, .cd-primary-nav ul {
 	padding-left: 0;
-	font-size: 1em;
+	font-size: .9em;
 	position: fixed !important;
 	top: 0;
 	right: 0;
@@ -30,7 +30,7 @@
     }
     
 	@include MQ(L) {
-		font-size: 1.2em;
+		font-size: 1em;
 		-webkit-box-shadow: none;
 		-moz-box-shadow: none;
 		box-shadow: none;
@@ -132,10 +132,18 @@
 			overflow: hidden;
 			text-overflow: ellipsis;
 		}
+		// CAMPUS IMAGES MOBILE
+		img {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			position: absolute;
+			top: 5px;
+		}
     }
     // SERMON NAV
 	.cd-nav-sermons .nav-current-series {
-		display: none;
+		
 		@include MQ(L){
 			display: block;
 		}
@@ -152,7 +160,7 @@
 			@include MQ(L) {
 				color: $color-4;
 				font-size: 1.5em;
-				margin-top: 8px;
+				margin-top: 9px;
 				padding-left: 0 !important;
 			}
 		}
@@ -221,6 +229,7 @@
 			font-size: 1em;
 			margin-top: 0px;
 			font-weight: 600;
+			padding-left: 50px;
 		}
 	}
 	.cd-nav-list .cd-nav-item {
@@ -250,7 +259,7 @@
 		line-height: 1.2;
 		background-color: #000;
 		@include MQ(L){
-			padding: 0 0 5px;
+			padding: 0 0 15px;
 			background-color: transparent;
 		}
 	}
@@ -265,9 +274,10 @@
 			@include MQ(L) {
 				color: $color-4;
 				font-weight: bold;
-				font-size: 1.2em;
+				font-size: 1em;
 				margin: 0;
 				line-height: 1;
+				text-transform: uppercase;
 			}
 		}
 
@@ -332,7 +342,7 @@
 
 		> li {
 			float: left;
-			margin-left: 1.5em;
+			margin-left: 1.6em;
 			&:hover > a {
 				color: $color-2;
 			}
@@ -355,9 +365,10 @@
 			}
 		}
 
+		/************* MAIN NAV BUTTONS STYLE **************/
 		> li > a {
 			/* main navigation buttons style */
-			
+			font-size: .9em;
 		}
 
 		.go-back, .see-all {
@@ -390,6 +401,7 @@
 				transition: opacity .3s 0s, visibility 0s .3s;
 			}
 
+			/* SEE ALL BUTTON STYLE */
 			> .see-all {
 				/* this is the BIG See all button at the bottom of the dropdown menu */
 				display: block;
@@ -411,7 +423,7 @@
 					height: 100%;
 					top: 0;
 					left: 0;
-					font-size: 2em;
+					font-size: 1em;
 					font-weight: bold;
 					text-align: center;
 					line-height: 70px;
@@ -435,7 +447,6 @@
 
 /******* CAMPUSES NAV PAGES STYLES *******/
 		.cd-nav-visit {
-			padding:0;
 
 			li {
 				/* set here number of columns - use width percentage */
@@ -449,7 +460,7 @@
 			}
     // CAMPUS ITEM
 			.cd-nav-item {
-				padding: 40px 50px;
+				padding: 20px 40px;
 				height: 100%;
 				line-height: 1.2;
 				text-align: center;
@@ -460,9 +471,9 @@
                 align-items: center;
 
 				img {
-                    position: static;
-                    width: 200px;
-                    height: 200px;
+                    position: relative;
+                    width: 170px;
+                    height: 170px;
                     border-radius: 100%;
 					opacity: 0.5;
 					@include transition(opacity .3s);
@@ -475,7 +486,7 @@
 				h3 {
                     text-transform: uppercase;
 					margin-top: 15px;
-					font-size: .9em;
+					font-size: 1em;
 					color: $color-4;
 					font-weight: bold;
 					padding: 15px .4em;
@@ -490,6 +501,8 @@
 
 /******* JoD NAV PAGES STYLES & EVENTS, CALENDAR *******/
 		.cd-nav-icons {
+			display: flex;
+			justify-content: center;
 			li {
 				/* set here number of columns - use width percentage */
 				&.hv-4-column {
@@ -499,7 +512,8 @@
 					@include column(.3333);
 				}
 				&.hv-2-column {
-					@include column(.43);
+					@include column(.25);
+					
 				}
 
 				.disabled {
@@ -524,6 +538,7 @@
 				height: auto;
 				line-height: 1.2;
 				padding: 5px 20px 5px 85px;
+				
 				position: relative;
 				
 				&.centered {
@@ -532,8 +547,8 @@
 				}
 
 				@include MQ(L) {
-					height: 130px;
-					padding: 40px 0 40px 130px;
+					height: 120px;
+					padding: 40px 0 0px 130px;
 
 					&:hover > h3 {
 						color: $color-2;
@@ -543,6 +558,8 @@
 				h3 {
 					color: $color-4;
 					font-weight: bold;
+					text-transform: uppercase;
+					font-size: 1em;
 				}
 
 				&::before {
@@ -551,6 +568,7 @@
 				}
 			}
 		}
+
 /******* MINISTRIES *******/
 
 		.cd-nav-list {
@@ -616,7 +634,8 @@
 		.cd-nav-sermons {
 			padding: 28px 64px 48px;
 			border-bottom: 0px;
-
+			display: flex;
+			justify-content: center;
 		    li {
 		        /* set here number of columns - use width percentage */
 		        &.hv-4-column {

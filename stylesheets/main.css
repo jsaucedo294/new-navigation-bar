@@ -74,7 +74,7 @@ main {
 /********************************************/
 .cd-primary-nav, .cd-primary-nav ul {
   padding-left: 0;
-  font-size: 1em;
+  font-size: .9em;
   position: fixed !important;
   top: 0;
   right: 0;
@@ -106,7 +106,7 @@ main {
 
 @media only screen and (min-width: 1200px) {
   .cd-primary-nav, .cd-primary-nav ul {
-    font-size: 1.2em;
+    font-size: 1em;
     -webkit-box-shadow: none;
     box-shadow: none;
   }
@@ -231,8 +231,15 @@ main {
   text-overflow: ellipsis;
 }
 
-.cd-primary-nav .cd-nav-sermons .nav-current-series {
-  display: none;
+.cd-primary-nav .cd-nav-visit .cd-nav-item img,
+.cd-primary-nav .cd-nav-icons .cd-nav-item img,
+.cd-primary-nav .cd-nav-list .cd-nav-item img,
+.cd-primary-nav .cd-nav-sermons .cd-nav-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -252,7 +259,7 @@ main {
   .cd-primary-nav .cd-nav-icons .cd-nav-item h3 {
     color: #cccccc;
     font-size: 1.5em;
-    margin-top: 8px;
+    margin-top: 9px;
     padding-left: 0 !important;
   }
 }
@@ -329,6 +336,7 @@ main {
   font-size: 1em;
   margin-top: 0px;
   font-weight: 600;
+  padding-left: 50px;
 }
 
 .cd-primary-nav .cd-nav-list .cd-nav-item h3 {
@@ -360,7 +368,7 @@ main {
 
 @media only screen and (min-width: 1200px) {
   .cd-primary-nav .cd-nav-label {
-    padding: 0 0 5px;
+    padding: 0 0 15px;
     background-color: transparent;
   }
 }
@@ -375,9 +383,10 @@ main {
   .cd-primary-nav .cd-nav-sermons li .cd-nav-item h3 {
     color: #cccccc;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1em;
     margin: 0;
     line-height: 1;
+    text-transform: uppercase;
   }
 }
 
@@ -408,6 +417,7 @@ main {
     float: right;
     overflow: visible;
     background: #333232;
+    /************* MAIN NAV BUTTONS STYLE **************/
     /******* CAMPUSES NAV PAGES STYLES *******/
     /******* JoD NAV PAGES STYLES & EVENTS, CALENDAR *******/
     /******* MINISTRIES *******/
@@ -445,7 +455,7 @@ main {
   }
   .cd-primary-nav > li {
     float: left;
-    margin-left: 1.5em;
+    margin-left: 1.6em;
   }
   .cd-primary-nav > li:hover > a {
     color: #fff;
@@ -474,6 +484,7 @@ main {
   }
   .cd-primary-nav > li > a {
     /* main navigation buttons style */
+    font-size: .9em;
   }
   .cd-primary-nav .go-back, .cd-primary-nav .see-all {
     display: none;
@@ -495,6 +506,7 @@ main {
     transform: translateX(0);
     -webkit-transition: opacity .3s 0s, visibility 0s 0s;
     transition: opacity .3s 0s, visibility 0s 0s;
+    /* SEE ALL BUTTON STYLE */
   }
   .cd-primary-nav .cd-nav-visit::after,
   .cd-primary-nav .cd-nav-icons::after,
@@ -540,7 +552,7 @@ main {
     height: 100%;
     top: 0;
     left: 0;
-    font-size: 2em;
+    font-size: 1em;
     font-weight: bold;
     text-align: center;
     line-height: 70px;
@@ -567,9 +579,6 @@ main {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .cd-primary-nav .cd-nav-visit {
-    padding: 0;
-  }
   .cd-primary-nav .cd-nav-visit li {
     /* set here number of columns - use width percentage */
     width: 25%;
@@ -580,7 +589,7 @@ main {
     margin-bottom: 50px;
   }
   .cd-primary-nav .cd-nav-visit .cd-nav-item {
-    padding: 40px 50px;
+    padding: 20px 40px;
     height: 100%;
     line-height: 1.2;
     text-align: center;
@@ -600,9 +609,9 @@ main {
             align-items: center;
   }
   .cd-primary-nav .cd-nav-visit .cd-nav-item img {
-    position: static;
-    width: 200px;
-    height: 200px;
+    position: relative;
+    width: 170px;
+    height: 170px;
     border-radius: 100%;
     opacity: 0.5;
     -webkit-transition: opacity 0.3s;
@@ -614,7 +623,7 @@ main {
   .cd-primary-nav .cd-nav-visit .cd-nav-item h3 {
     text-transform: uppercase;
     margin-top: 15px;
-    font-size: .9em;
+    font-size: 1em;
     color: #cccccc;
     font-weight: bold;
     padding: 15px .4em;
@@ -623,6 +632,14 @@ main {
   }
   .cd-primary-nav .cd-nav-visit .cd-nav-item h3:hover {
     color: #fff;
+  }
+  .cd-primary-nav .cd-nav-icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .cd-primary-nav .cd-nav-icons li {
     /* set here number of columns - use width percentage */
@@ -637,7 +654,7 @@ main {
     float: left;
   }
   .cd-primary-nav .cd-nav-icons li.hv-2-column {
-    width: 43%;
+    width: 25%;
     float: left;
   }
   .cd-primary-nav .cd-nav-icons li .disabled h3 {
@@ -667,8 +684,8 @@ main {
 
 @media only screen and (min-width: 1200px) and (min-width: 1200px) {
   .cd-primary-nav .cd-nav-icons .cd-nav-item {
-    height: 130px;
-    padding: 40px 0 40px 130px;
+    height: 120px;
+    padding: 40px 0 0px 130px;
   }
   .cd-primary-nav .cd-nav-icons .cd-nav-item:hover > h3 {
     color: #fff;
@@ -679,6 +696,8 @@ main {
   .cd-primary-nav .cd-nav-icons .cd-nav-item h3 {
     color: #cccccc;
     font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1em;
   }
   .cd-primary-nav .cd-nav-icons .cd-nav-item::before {
     left: 40px;
@@ -748,6 +767,12 @@ main {
   .cd-primary-nav .cd-nav-sermons {
     padding: 28px 64px 48px;
     border-bottom: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .cd-primary-nav .cd-nav-sermons li {
     /* set here number of columns - use width percentage */
