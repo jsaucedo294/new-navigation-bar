@@ -3,7 +3,7 @@
 /********************************************/
 .cd-primary-nav, .cd-primary-nav ul {
 	padding-left: 0;
-	font-size: .9em;
+	font-size: 1em;
 	position: fixed !important;
 	top: 0;
 	right: 0;
@@ -30,7 +30,7 @@
     }
     
 	@include MQ(L) {
-		font-size: 1em;
+		font-size: 1.2em;
 		-webkit-box-shadow: none;
 		-moz-box-shadow: none;
 		box-shadow: none;
@@ -231,6 +231,18 @@
             }
             &.whitefield::before {
                 background-image: url('https://www.highview.org/Content/ExternalSite/Icons/AboutUs/whitefield.svg');
+			}
+			&.profile::before {
+                background-image: url('https://www.highview.org/Content/ExternalSite/Icons/login-icon.svg');
+            }
+            &.giving-history::before {
+                background-image: url('https://www.highview.org/Content/ExternalSite/Icons/MyAccount/history.svg');
+            }
+            &.manage-giving::before {
+                background-image: url('https://www.highview.org/Content/ExternalSite/Icons/MyAccount/setting.svg');
+            }
+            &.logout-icon::before {
+                background-image: url('https://www.highview.org/Content/ExternalSite/Icons/MyAccount/logout.svg');
             }
 
 	}
@@ -380,7 +392,7 @@
 		/************* MAIN NAV BUTTONS STYLE **************/
 		> li > a {
 			/* main navigation buttons style */
-			font-size: .9em;
+			font-size: 1em;
 		}
 
 		.go-back, .see-all {

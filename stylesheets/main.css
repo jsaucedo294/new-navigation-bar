@@ -74,7 +74,7 @@ main {
 /********************************************/
 .cd-primary-nav, .cd-primary-nav ul {
   padding-left: 0;
-  font-size: .9em;
+  font-size: 1em;
   position: fixed !important;
   top: 0;
   right: 0;
@@ -106,7 +106,7 @@ main {
 
 @media only screen and (min-width: 1200px) {
   .cd-primary-nav, .cd-primary-nav ul {
-    font-size: 1em;
+    font-size: 1.2em;
     -webkit-box-shadow: none;
     box-shadow: none;
   }
@@ -348,6 +348,22 @@ main {
   background-image: url("https://www.highview.org/Content/ExternalSite/Icons/AboutUs/whitefield.svg");
 }
 
+.cd-primary-nav .cd-nav-icons .cd-nav-item.profile::before {
+  background-image: url("https://www.highview.org/Content/ExternalSite/Icons/login-icon.svg");
+}
+
+.cd-primary-nav .cd-nav-icons .cd-nav-item.giving-history::before {
+  background-image: url("https://www.highview.org/Content/ExternalSite/Icons/MyAccount/history.svg");
+}
+
+.cd-primary-nav .cd-nav-icons .cd-nav-item.manage-giving::before {
+  background-image: url("https://www.highview.org/Content/ExternalSite/Icons/MyAccount/setting.svg");
+}
+
+.cd-primary-nav .cd-nav-icons .cd-nav-item.logout-icon::before {
+  background-image: url("https://www.highview.org/Content/ExternalSite/Icons/MyAccount/logout.svg");
+}
+
 .cd-primary-nav .cd-nav-visit .cd-nav-item h3 {
   font-size: 1em;
   margin-top: 0px;
@@ -500,7 +516,7 @@ main {
   }
   .cd-primary-nav > li > a {
     /* main navigation buttons style */
-    font-size: .9em;
+    font-size: 1em;
   }
   .cd-primary-nav .go-back, .cd-primary-nav .see-all {
     display: none;
