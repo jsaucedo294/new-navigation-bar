@@ -28,14 +28,14 @@
 /************    CONTENT   **************/
 .cd-main-content {
   min-height: 100vh;
-  z-index: 2;
+  z-index: 1;
 }
 
 /************    HEADER    **************/
 .cd-main-header {
   height: 70px;
   background: #333232;
-  z-index: 4;
+  z-index: 2;
   -webkit-box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.6);
   box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.6);
 }
@@ -433,7 +433,7 @@ main {
     visibility: visible;
     -webkit-transition: visibility 0s 0s;
     transition: visibility 0s 0s;
-    z-index: 3;
+    z-index: 1;
   }
 }
 
@@ -472,7 +472,7 @@ main {
     width: auto;
     background: #807e7e;
     overflow: visible;
-    z-index: 3;
+    z-index: 1;
   }
   .cd-primary-nav ul.is-hidden {
     /* reset mobile style */
@@ -990,7 +990,7 @@ img {
   left: 1.2em;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
-  z-index: 3;
+  z-index: 1;
 }
 
 .cd-logo img {
@@ -1064,7 +1064,7 @@ img {
   white-space: nowrap;
   /* hide text */
   color: transparent !important;
-  z-index: 4;
+  z-index: 2;
 }
 
 .cd-nav-trigger span, .cd-nav-trigger span::before, .cd-nav-trigger span::after {
@@ -1181,7 +1181,7 @@ img {
 .cd-overlay {
   /* shadow layer visible when navigation is active */
   position: fixed;
-  z-index: 3;
+  z-index: 1;
   height: 100%;
   width: 100%;
   top: 0;
@@ -1227,7 +1227,7 @@ img {
   width: 100%;
   overflow: visible;
   visibility: visible;
-  z-index: 2;
+  z-index: 0;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -1239,7 +1239,7 @@ img {
   }
   .no-js .cd-primary-nav {
     position: absolute;
-    z-index: 3;
+    z-index: 1;
     display: inline-block;
     width: auto;
     top: 0;
