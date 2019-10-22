@@ -219,6 +219,18 @@
             }
             &.bulletin::before {
                 background-image: url('https://www.highview.org/Content/ExternalSite/Icons/bulletin.svg');
+			}
+			&.belief::before {
+                background-image: url('https://www.highview.org/Content/ExternalSite/Icons/AboutUs/bible.svg');
+            }
+            &.membership::before {
+                background-image: url('https://www.highview.org/Content/ExternalSite/Icons/AboutUs/multiple-users.svg');
+            }
+            &.our-staff::before {
+                background-image: url('https://www.highview.org/Content/ExternalSite/Icons/AboutUs/handshake.svg');
+            }
+            &.whitefield::before {
+                background-image: url('https://www.highview.org/Content/ExternalSite/Icons/AboutUs/whitefield.svg');
             }
 
 	}

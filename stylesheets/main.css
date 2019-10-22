@@ -332,6 +332,22 @@ main {
   background-image: url("https://www.highview.org/Content/ExternalSite/Icons/bulletin.svg");
 }
 
+.cd-primary-nav .cd-nav-icons .cd-nav-item.belief::before {
+  background-image: url("https://www.highview.org/Content/ExternalSite/Icons/AboutUs/bible.svg");
+}
+
+.cd-primary-nav .cd-nav-icons .cd-nav-item.membership::before {
+  background-image: url("https://www.highview.org/Content/ExternalSite/Icons/AboutUs/multiple-users.svg");
+}
+
+.cd-primary-nav .cd-nav-icons .cd-nav-item.our-staff::before {
+  background-image: url("https://www.highview.org/Content/ExternalSite/Icons/AboutUs/handshake.svg");
+}
+
+.cd-primary-nav .cd-nav-icons .cd-nav-item.whitefield::before {
+  background-image: url("https://www.highview.org/Content/ExternalSite/Icons/AboutUs/whitefield.svg");
+}
+
 .cd-primary-nav .cd-nav-visit .cd-nav-item h3 {
   font-size: 1em;
   margin-top: 0px;
